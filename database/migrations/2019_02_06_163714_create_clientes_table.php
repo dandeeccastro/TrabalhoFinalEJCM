@@ -15,23 +15,18 @@ class CreateClientesTable extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
-            $table->string('telefone');
-            $table->string('email')->unique();
-            $table->string('cpf')->unique();
-            $table->string('endereco');
-            $table->string('dataDeNascimento');
             $table->string('numeroCartao')->unique();
             $table->string('nomeTitularCartao');
             $table->string('codigoSegurancaCartao')->unique();
             $table->string('bandeiraCartao');
             $table->string('dataDeVencimentoCartao');
-            $table->string('user_id')->unsigned();
+            $table->integer('users_id')->unsigned()->nullable();
+            $table->SoftDeletes();
 
             $table->timestamps();
         });
         Schema::table('clientes', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
 
         });
     }

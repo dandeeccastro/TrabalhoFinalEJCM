@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Cliente;
-class ClienteController extends Controller
+use App\Vendedor;
+class VendedorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,8 @@ class ClienteController extends Controller
      */
     public function index()
     {
-      //pega todas as instâncias do objeto
-      $clientes = Cliente::all();
-      return response()->json([$clientes]);
+      $vendedor = Vendedor::all();
+      return response()->json([$vendedor]);
     }
 
     /**
@@ -26,10 +25,12 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
+      $vendedor = new Vendedor;
 
-      $clientes = new Cliente;
-      $clientes -> insereCliente($request);
-      return response()->json([$clientes]);
+      $vendedor->classificacao = $request->classificacao;
+      $vendedor->user_id = $request->user_id;
+      $vendedor->save();
+      return response()->json([$vendedor]);
     }
 
     /**
@@ -40,9 +41,8 @@ class ClienteController extends Controller
      */
     public function show($id)
     {
-      //encontra a instância desejada e atribui
-      $clientes = Cliente::find($id);
-      return response()->json([$clientes]);
+      $vendedor = Vendedor::find($id);
+      return response()->json([$vendedor]);
     }
 
     /**
@@ -55,10 +55,14 @@ class ClienteController extends Controller
     public function update(Request $request, $id)
     {
       //encontra o id desejado
-      $clientes = Cliente::find($id);
-      $clientes -> updateCliente($request);
-
-      return response()->json([$clientes]);
+      $vendedor = Vendedor::find($id);
+      //alteras os dados quando aplicável
+      if($request->classificacao) {
+        $classificacao->classificacao = $request->classificacao;
+      }
+      if($request->user_id) {
+        $vendedor->user_id = $request->user_id;
+      }
     }
 
     /**
@@ -69,8 +73,7 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-      $clientes = new Cliente;
-      $clientes -> deleteClientes($id);
-      return response()->json(['message' => 'Instancia deletada com sucesso']);
+      Vendedor::destroy($id);
+      return response()->json(['message' => 'Instância deletada com sucesso']);
     }
 }
