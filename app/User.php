@@ -27,4 +27,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    public cliente(){
+        return $this->haveOne('App\cliente');
+    }
+    
+    $cliente = User::find($id)->cliente();
+
+
+    
 }

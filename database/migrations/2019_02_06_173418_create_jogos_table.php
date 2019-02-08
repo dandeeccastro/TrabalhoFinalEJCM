@@ -17,15 +17,15 @@ class CreateJogosTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('preco');
-            $table->integer('idVendedor')->unsigned();
-            $table->integer('idCategoria')->unsigned();
+            $table->integer('vendedorId')->unsigned();
+            $table->integer('categoriaId')->unsigned();
             $table->string('classificacaoUsuarios');
             $table->string('descricao');
             $table->timestamps();
         });
         Schema::table('jogos', function (Blueprint $table) {
-          $table->foreign('idVendedor')->references('id')->on('vendedor')->onDelete('cascade');
-          $table->foreign('idCategoria')->references('id')->on('categoria')->onDelete('cascade');
+          $table->foreign('vendedorId')->references('id')->on('vendedor')->onDelete('cascade');
+          $table->foreign('categoriaId')->references('id')->on('categoria')->onDelete('cascade');
 
         });
     }

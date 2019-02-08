@@ -20,9 +20,19 @@ class CreateClientesTable extends Migration
             $table->string('email')->unique();
             $table->string('cpf')->unique();
             $table->string('endereco');
-            $table->string('numeroCartao');
             $table->string('dataDeNascimento');
+            $table->string('numeroCartao')->unique();
+            $table->string('nomeTitularCartao');
+            $table->string('codigoSegurancaCartao')->unique();
+            $table->string('bandeiraCartao');
+            $table->string('dataDeVencimentoCartao');
+            $table->string('user_id')->unsigned();
+
             $table->timestamps();
+        });
+        Schema::table('clientes', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 
