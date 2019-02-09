@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+/* Usando Dosis porque Yaldevi não está disponível no Google Fonts */
+
+ul li {
+	width: 100%;
+	font-size: 1.25em;
+}
+
+ul li, label {
+	font-family: 'Dosis', sans-serif;
+}
+
+input {
+	background-color: lightgrey;
+}
+
+.company-logo {
+	font-family: 'Press Start 2P', serif;
+	font-size: 2em;
+}
+
+.nav-images {
+	float: left;
+	height: 4em;
+  	margin: 1em 0;	
+}
+
+.user-no-photo {
+	display: flex;
+	align-items: center;
+}
+
+.row {
+	margin: 0;
+}
