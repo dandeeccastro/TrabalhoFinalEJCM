@@ -2,6 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 /* Usando Dosis porque Yaldevi não está disponível no Google Fonts */
 
+nav {
+	height: 10%;
+}
+
+.input-field {
+	float: right;
+}
+
 ul li {
 	width: 100%;
 	font-size: 1.25em;

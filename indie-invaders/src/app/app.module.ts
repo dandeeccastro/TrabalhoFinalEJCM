@@ -6,11 +6,14 @@ import { AppComponent } from './app.component';
 
 import { MaterializeModule } from 'angular2-materialize';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { FooterComponent } from './footer/footer.component';
+import { ParceriaComponent } from './pages/parceria/parceria.component';
 @NgModule({
   declarations: [
 	AppComponent,
-	NavbarComponent
+	NavbarComponent,
+	FooterComponent,
+	ParceriaComponent
   ],
   imports: [
     BrowserModule,

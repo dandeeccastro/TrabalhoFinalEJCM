@@ -1,0 +1,26 @@
+.image-banner {
+	/* TODO: trocar imagem para a usada no modelo */
+	background-image: url("../../../assets/jogobg.jpg");
+	background-color: rgba(0,0,0,0.5);
+	background-blend-mode: multiply;
+	background-origin: center;
+}
+.image-banner, .side-banner {
+	height: 50em;
+}
+.image-text, .side-text {
+	color: #dddddd;
+	text-align: center;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+	font-family: 'Dosis', sans-serif;
+	margin: 0 .5em;
+}
+.image-text {
+	font-size: 7.5em;
+}
+.side-text {
+	font-size: 5em;
+}
