@@ -14,7 +14,7 @@ class Jogos extends Model
   public function insereJogo($request){
     $this ->nome = $request ->nome;
     $this ->preco = $request ->preco;
-    $this ->classificaoUsuarios = $request ->classificaoUsuarios;
+    $this ->classificacaoUsuarios = $request ->classificacaoUsuarios;
     $this ->descricao = $request ->descricao;
     $this ->foto = $request ->foto;
     $this ->video = $request ->video;
@@ -32,7 +32,7 @@ class Jogos extends Model
       $this->preco = $request->preco;
     }
     if($request->classificaoUsuarios) {
-      $this->classificaoUsuarios = $request->classificaoUsuarios;
+      $this->classificacaoUsuarios = $request->classificacaoUsuarios;
     }
     if($request->descricao) {
       $this->descricao = $request->descricao;

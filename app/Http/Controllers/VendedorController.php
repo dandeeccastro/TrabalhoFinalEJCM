@@ -26,10 +26,7 @@ class VendedorController extends Controller
     public function store(Request $request)
     {
       $vendedor = new Vendedor;
-
-      $vendedor->classificacao = $request->classificacao;
-      $vendedor->user_id = $request->user_id;
-      $vendedor->save();
+      $vendedor -> insereVendedores($request);
       return response()->json([$vendedor]);
     }
 
@@ -57,12 +54,8 @@ class VendedorController extends Controller
       //encontra o id desejado
       $vendedor = Vendedor::find($id);
       //alteras os dados quando aplicável
-      if($request->classificacao) {
-        $classificacao->classificacao = $request->classificacao;
-      }
-      if($request->user_id) {
-        $vendedor->user_id = $request->user_id;
-      }
+      $vendedor -> updateVendedores($request);
+      return response()->json([$vendedor]);
     }
 
     /**
@@ -73,7 +66,8 @@ class VendedorController extends Controller
      */
     public function destroy($id)
     {
-      Vendedor::destroy($id);
-      return response()->json(['message' => 'Instância deletada com sucesso']);
+      $vendedor = new Vendedor;
+      $vendedor -> deleteVendedores($id);
+      return response()->json(['message' => 'Instancia deletada com sucesso']);
     }
 }

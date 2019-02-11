@@ -5,10 +5,15 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;//usando Passport
 
 class User extends Authenticatable
 {
+
     use Notifiable;
+    use HasApiTokens; //indicar que o import acima será utilizado
+
+
 
     /**
      * The attributes that are mass assignable.
@@ -29,12 +34,12 @@ class User extends Authenticatable
     ];
 
 
-    public cliente(){
-        return $this->haveOne('App\cliente');
-    }
-    
-    $cliente = User::find($id)->cliente();
+    //public cliente(){
+        //return $this->haveOne('App\cliente');
+    //}
+
+    //$cliente = User::find($id)->cliente();
 
 
-    
+
 }
