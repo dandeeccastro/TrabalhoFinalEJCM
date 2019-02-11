@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-display-jogos',
@@ -7,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayJogosComponent implements OnInit {
 
-  constructor() { }
+	@Input() index: number;
+	private titulos = [
+		"Popular", "Promoções", "Para Você"	
+	];
 
-  ngOnInit() {
- 	 
-  }
+	constructor() { 
+	}
+
+  	ngOnInit() { 
+ 		console.log(this.index);
+  	}
 
 }
