@@ -4,3 +4,8 @@ ul {
 ul li {
 	margin:0 1em;
 }
+footer {
+	background-color: #0B181C;
+	border: 1px solid #1E83A2;
+	box-sizing: border-box;
+}

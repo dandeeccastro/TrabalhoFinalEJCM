@@ -1,49 +1,54 @@
-<nav>
-	<div class="row main-navbar cyan darken-4">
-		<!-- A imagem sairá do código pois será provida pelo back -->
-		<div class="col l2">
-			<img class="nav-images user-no-photo" src="../../assets/man-user.svg" alt="No User Photo">
-		</div>		
-		<div class="col l8">
-			<h1 class="company-logo center">Indie Invaders</h1>
+<!--	<nav class="nav-extended">
+		<div class="row main-navbar nav-wrapper ">
+			<!-- A imagem sairá do código pois será provida pelo back 
+			<div class="col l2">
+				<img class="nav-images user-no-photo" src="../../assets/man-user.svg" alt="No User Photo">
+			</div>		
+			<div class="col l8">
+				<a routerLink="">
+					<h1 class="company-logo center">Indie Invaders</h1>
+				</a>
+			</div>
+			<div class="col l2 input-field">
+				<!-- TODO fix o material icons não aparecer 
+				<input type="search" name="search">
+				<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+			</div>
 		</div>
-		<div class="col l2 input-field">
-			<!-- TODO fix o material icons não aparecer -->
-			<i class="valign-center material-icons prefix">search</i>
-			<input type="text" name="search">
-			<label for="search">Pesquisar</label>
-		</div>
-	</div>
-	<div class="row cyan darken-3 menu">
-		<ul>
-			<div routerLinkActive="active" class="col l3 m3">
-				<a> 
-					<li class="center">
-						Categorias
-					</li>
+		<div class="nav-content cyan darken-3">
+				<ul class="tabs tabs-transparent">
+					<li class="tab"><a routerLink="">Categorias</a></li>
+					<li class="tab"><a routerLink="">Desenvolvedores</a></li>
+					<li class="tab"><a routerLink="parceria">Por que ser um parceiro?</a></li>
+					<li class="tab"><a routerLink="">Sobre Nós</a></li>
+				</ul>
+			</div>	
+	</nav>-->
+
+ <div class="navbar-fixed">
+	<nav class="nav-extended">
+    <div class="row nav-wrapper">
+			<div class="col l2">
+				<img class="nav-images user-no-photo" src="../../assets/man-user.svg" alt="No User Photo">
+			</div>		
+			<div class="col l8">
+				<a routerLink="">
+					<h1 class="company-logo center">Indie Invaders</h1>
 				</a>
 			</div>
-			<div routerLinkActive="active" class="col l3 m3">
-				<a >
-					<li class="center">
-						Desenvolvedores
-					</li>
-				</a>
+			<div class="col l2 input-field">
+				<!-- TODO fix o material icons não aparecer --> 
+				<input type="search" name="search">
+				<label class="label-icon" for="search"><i class="material-icons">search</i></label>
 			</div>
-			<div routerLinkActive="active" class="col l3 m3">
-				<a routerLink="parceria">
-					<li class="center">
-						Por que ser um parceiro?
-					</li>
-				</a>
-			</div>
-			<div routerLinkActive="active" class="col l3 m3">
-				<a >
-					<li class="center">
-						Sobre nós	
-					</li>
-				</a>
-			</div>
-		</ul>
-	</div>
-</nav>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a routerLink="">Categorias</a></li>
+					<li class="tab"><a routerLink="">Desenvolvedores</a></li>
+					<li class="tab"><a routerLink="parceria">Por que ser um parceiro?</a></li>
+					<li class="tab"><a routerLink="">Sobre Nós</a></li>
+      </ul>
+    </div>
+  </nav>
+ </div>
