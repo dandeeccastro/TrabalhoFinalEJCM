@@ -6,10 +6,6 @@ nav {
 	height: 10%;
 }
 
-.input-field {
-	float: right;
-}
-
 ul li {
 	width: 100%;
 	font-size: 1.25em;
@@ -23,7 +19,11 @@ input {
 	background-color: lightgrey;
 }
 
-.company-logo {
+.logo{
+	width: 8%;
+}
+
+.brand-logo {
 	font-family: 'Press Start 2P', serif;
 	font-size: 2em;
 }
@@ -41,4 +41,8 @@ input {
 
 .row {
 	margin: 0;
+}
+
+.input-field {
+	float: right;
 }
