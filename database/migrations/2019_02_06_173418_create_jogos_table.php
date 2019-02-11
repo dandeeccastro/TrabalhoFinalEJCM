@@ -19,7 +19,7 @@ class CreateJogosTable extends Migration
             $table->string('preco');
             $table->integer('vendedor_id')->unsigned();
             //$table->integer('categoria_id')->unsigned();
-            $table->string('classificacaoUsuarios');
+            $table->string('classificacaoUsuarios')->nullable();
             $table->string('descricao');
             $table->string('foto');
             $table->string('video');
