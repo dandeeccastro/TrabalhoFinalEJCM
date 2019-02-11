@@ -48,9 +48,6 @@ class Cliente extends Model
       //salva
       $this->save();
     }
-    public function getAll($request){
-      $clientes = Cliente::all();
-    }
     public function deleteClientes($id){
       Cliente::destroy($id);
 

@@ -15,7 +15,7 @@ class CreateVendedoresTable extends Migration
     {
         Schema::create('vendedores', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('classificacao');
+            $table->string('classificacao')->nullable();
             $table->integer('user_id')->unsigned();
             $table->timestamps();
         });

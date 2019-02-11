@@ -25,17 +25,9 @@ class JogosController extends Controller
      */
     public function store(Request $request)
     {
-        $jogos = new Jogos;
-        
-        $jogos->nome = $request->nome;
-        $jogos->preco = $request->preco;
-        $jogos->classificaoUsuarios = $request->nome;
-        $jogos->descricao = $request->descricao;
-        $jogos->foto = $request->foto;
-        $jogos->video = $request->video;
-        $jogos->vendedor_id = $request->vendedor_id;
-        $jogos->save();
-        return response()->json([$jogos]);
+      $jogos = new Jogos;
+      $jogos -> insereJogo($request);
+      return response()->json([$jogos]);
     }
 
     /**
@@ -61,26 +53,9 @@ class JogosController extends Controller
     {
     //encontra o id desejado
         $jogos = Jogos::find($id);
-        //alteras os dados quando aplicável
-        if($jogos->classificacaoUsuarios) {
-            $classificacaoUsuarios->classificacaoUsuarios = $request->classificacaoUsuarios;
-        }
-        if($request->vendedor_id) {
-            $vendedor_id->vendedor_id = $request->vendedor_id;
-        }
-        if($request->nome) {
-            $nome->nome = $request->nome;
-        }
-         if($request->descricao) {
-            $descricao->descricao = $request->descricao;
-        }
-         if($request->foto) {
-            $foto->foto = $request->foto;
-        }
-         if($request->video) {
-            $video->video = $request->video;
-        }
+        $jogos -> updateJogos($request);
 
+        return response()->json([$jogos]);
     }
 
     /**
@@ -91,7 +66,8 @@ class JogosController extends Controller
      */
     public function destroy($id)
     {
-        Jogos::destroy($id);
-        return response()->json(['message' => 'Instância deletada com sucesso']);
+      $jogos = new Jogos;
+      $jogos -> deleteJogos($id);
+      return response()->json(['message' => 'Instancia deletada com sucesso']);
     }
 }

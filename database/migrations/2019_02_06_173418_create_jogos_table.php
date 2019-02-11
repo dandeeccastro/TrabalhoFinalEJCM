@@ -23,6 +23,7 @@ class CreateJogosTable extends Migration
             $table->string('descricao');
             $table->string('foto');
             $table->string('video');
+            $table->SoftDeletes();
             $table->timestamps();
         });
         Schema::table('jogos', function (Blueprint $table) {
