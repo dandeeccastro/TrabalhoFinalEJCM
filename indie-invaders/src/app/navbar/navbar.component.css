@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-/* Usando Dosis porque Yaldevi não está disponível no Google Fonts */
 
+<<<<<<< HEAD
 nav {
 	height: 10%;
 }
@@ -41,6 +41,10 @@ input {
 
 .row {
 	margin: 0;
+=======
+.nav-content{
+	text-align: center !important;
+>>>>>>> b31808f7d589e99807a8328d97cecce2b6ddedde
 }
 
 .input-field {

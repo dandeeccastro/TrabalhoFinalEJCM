@@ -1,10 +1,3 @@
-.image-banner {
-	/* TODO: trocar imagem para a usada no modelo */
-	background-image: url("../../../assets/jogobg.jpg");
-	background-color: rgba(0,0,0,0.5);
-	background-blend-mode: multiply;
-	background-origin: center;
-}
 .image-banner, .side-banner {
 	height: 50em;
 }
@@ -23,4 +16,33 @@
 }
 .side-text {
 	font-size: 5em;
+}
+.image-banner {
+	background-image: url("../../../assets/devs.jpg");
+	background-size: cover;
+	background-color: rgba(0,0,0,0.5);
+	background-blend-mode: multiply;
+	background-origin: center;
+}
+li .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.icon {
+	height: 12.5em;
+}
+p {
+	font-size: 2.5em;
+}
+.parceria-button-title, button {
+	font-family: 'VT323', sans-serif;
+}
+button {
+	font-size: 3em;
+}
+.parceria-button .row {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
