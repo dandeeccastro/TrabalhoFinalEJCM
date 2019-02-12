@@ -7,16 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DisplayJogosComponent implements OnInit {
 
-	@Input() index: number;
-	private titulos = [
-		"Popular", "Promoções", "Para Você"	
-	];
+	@Input() titulo
 
 	constructor() { 
 	}
 
   	ngOnInit() { 
- 		console.log(this.index);
+ 		console.log(this.titulo);
   	}
 
 }

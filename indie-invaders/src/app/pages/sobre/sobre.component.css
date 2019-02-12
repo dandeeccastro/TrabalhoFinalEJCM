@@ -1,0 +1,6 @@
+.equipe-list {
+    display: flex;
+}
+.equipe-list img {
+    height: 70px;
+}

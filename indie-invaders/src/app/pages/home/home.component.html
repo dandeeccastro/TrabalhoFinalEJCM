@@ -1,5 +1,17 @@
 <section class="first-section">
-    <app-display-jogos [index]="0"></app-display-jogos>
-    <app-display-jogos [index]="1"></app-display-jogos>
-    <app-display-jogos [index]="2"></app-display-jogos>
+    <ul class="carousel-list">
+        <li *ngFor="let p of titulos">
+            <app-display-jogos [titulo]="p"></app-display-jogos>
+        </li>
+    </ul>
 </section>
+<!-- <section class="row">
+    <ul class="game-list">
+        <li *ngFor="let d of games">
+            <div class="col l4"><span>{{ d.nome }}</span></div>
+            <div class="col l4"><span>{{ d.preco }}</span></div>
+            <div class="col l4"><span>{{ d.genero }}</span></div>
+        </li>
+    </ul>
+</section>
+-->
