@@ -8,6 +8,7 @@ use Auth;
 use App\User;
 use DB;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\UserRequest;
 class PassportController extends Controller
 {
   public $successStatus =200;
@@ -21,16 +22,16 @@ class PassportController extends Controller
       return response() -> json (['error' => 'Unauthorised'], 401);
     }
   }
-  public function register(Request $request){
-    $validator = Validator::make($request -> all(),[
-      'name' => 'required',
-			'email' => 'required|email',
-			'password' => 'required',
-			'c_password' => 'required|same:password',
-    ]);
-		if ($validator -> fails()){
-			return response()-> json(['error' => $validator-> errors()], 400);
-		}
+  public function register(UserRequest $request){
+    //$validator = Validator::make($request -> all(),[
+      //'name' => 'required',
+			//'email' => 'required|email',
+			//'password' => 'required',
+			//'c_password' => 'required|same:password',
+    //]);
+		//if ($validator -> fails()){
+			//return response()-> json(['error' => $validator-> errors()], 400);
+		//}
 		$newUser = new User;
 		$newUser->name = $request ->name;
 		$newUser->email = $request->email;

@@ -19,6 +19,7 @@ class Jogos extends Model
     $this ->foto = $request ->foto;
     $this ->video = $request ->video;
     $this ->vendedor_id = $request ->vendedor_id;
+    $this ->categoria_id = $request ->categoria_id;
     //$this ->users_id = $request ->users_id;
 
     $this -> save();
@@ -45,6 +46,9 @@ class Jogos extends Model
     }
     if($request->vendedor_id) {
       $this->vendedor_id = $request->vendedor_id;
+    }
+    if($request->categoria_id) {
+      $this->categoria_id = $request->categoria_id;
     }
     $this->save();
   }
