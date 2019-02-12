@@ -1,15 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
-
-.input-field {
-	float: right;
-}
-
-.nav-extended {
-	margin-bottom: 1px;
-}
-
 ul li {
 	font-size: 1.25em;
 }
@@ -18,8 +9,21 @@ ul li, label {
 	font-family: 'Dosis', sans-serif;
 }
 
-input {
+nav .input-field {
+	margin-top: 10vh;
+}
+
+nav input{
 	background-color: lightgrey;
+	padding: 1vw;
+}
+
+.input-field {
+	float: right;
+}
+
+.nav-extended {
+	margin-bottom: 1px;
 }
 
 .menu{
@@ -32,7 +36,7 @@ input {
 }
 
 .logo{
-	width: 33%;
+	width: 20%;
 }
 
 .nav-images {

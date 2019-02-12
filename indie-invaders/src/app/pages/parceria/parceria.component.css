@@ -23,6 +23,7 @@
 	background-color: rgba(0,0,0,0.5);
 	background-blend-mode: multiply;
 	background-origin: center;
+	/* margin-top: -5vh; */
 }
 li .container {
 	display: flex;
@@ -31,16 +32,6 @@ li .container {
 }
 .icon {
 	height: 12.5em;
-}
-.gameboy-text {
-	font-size: 2em;
-	padding: 0 .5em;
-}
-.gb-textbox {
-	width: 50%;
-	height: 25%;
-	position: relative;
-	top: -59em;
 }
 .descricao-banner .row {
 	height: 120vh;

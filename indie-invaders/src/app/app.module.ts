@@ -11,21 +11,29 @@ import { ParceriaComponent } from './pages/parceria/parceria.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DisplayJogosComponent } from './pages/home/display-jogos/display-jogos.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { JogadorComponent } from './pages/cadastro/jogador/jogador.component';
+import { DesenvolvedorComponent } from './pages/cadastro/desenvolvedor/desenvolvedor.component';
+import { UsuarioComponent } from './pages/cadastro/usuario/usuario.component';
+
 @NgModule({
   declarations: [
 	AppComponent,
 	NavbarComponent,
 	FooterComponent,
-	ParceriaComponent
 	ParceriaComponent,
 	HomeComponent,
 	DisplayJogosComponent,
-	SobreComponent
+	SobreComponent,
+	CadastroComponent,
+	JogadorComponent,
+	DesenvolvedorComponent,
+	UsuarioComponent
   ],
   imports: [
     BrowserModule,
 	AppRoutingModule,
-	MaterializeModule 
+	MaterializeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
