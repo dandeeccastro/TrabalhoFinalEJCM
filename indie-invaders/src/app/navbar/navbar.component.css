@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
-<<<<<<< HEAD
 nav {
 	height: 10%;
 }
@@ -19,13 +18,17 @@ input {
 	background-color: lightgrey;
 }
 
-.logo{
-	width: 8%;
+.menu{
+	background-color: #335964 !important;
 }
 
-.brand-logo {
-	font-family: 'Press Start 2P', serif;
-	font-size: 2em;
+.main-navbar{
+	background-color: #0B181C !important;
+	padding-bottom: 1vh !important;
+}
+
+.logo{
+	width: 33%;
 }
 
 .nav-images {
@@ -41,10 +44,6 @@ input {
 
 .row {
 	margin: 0;
-=======
-.nav-content{
-	text-align: center !important;
->>>>>>> b31808f7d589e99807a8328d97cecce2b6ddedde
 }
 
 .input-field {
