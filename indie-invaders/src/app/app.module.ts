@@ -8,12 +8,19 @@ import { MaterializeModule } from 'angular2-materialize';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ParceriaComponent } from './pages/parceria/parceria.component';
+import { HomeComponent } from './pages/home/home.component';
+import { DisplayJogosComponent } from './pages/home/display-jogos/display-jogos.component';
+import { SobreComponent } from './pages/sobre/sobre.component';
 @NgModule({
   declarations: [
 	AppComponent,
 	NavbarComponent,
 	FooterComponent,
 	ParceriaComponent
+	ParceriaComponent,
+	HomeComponent,
+	DisplayJogosComponent,
+	SobreComponent
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,7 @@
 	height: 100%;
 	display: flex;
 	justify-content: center;
-	align-items: center;	
+	align-items: center;
 	font-family: 'Dosis', sans-serif;
 	margin: 0 .5em;
 }
@@ -32,8 +32,18 @@ li .container {
 .icon {
 	height: 12.5em;
 }
-p {
-	font-size: 2.5em;
+.gameboy-text {
+	font-size: 2em;
+	padding: 0 .5em;
+}
+.gb-textbox {
+	width: 50%;
+	height: 25%;
+	position: relative;
+	top: -59em;
+}
+.descricao-banner .row {
+	height: 120vh;
 }
 .parceria-button-title, button {
 	font-family: 'VT323', sans-serif;
@@ -46,7 +56,14 @@ button {
 	flex-direction: column;
 	align-items: center;
 }
-
-.descricao-banner{
-	background-color: black;
+.gameboy {
+	width: 100%;
+	opacity: 0.3;
+	height: 90vh;
+}
+.descricao-banner .l8 {
+	height: 120vh;
+}
+.icon-capsule {
+	margin: 3em 0;
 }

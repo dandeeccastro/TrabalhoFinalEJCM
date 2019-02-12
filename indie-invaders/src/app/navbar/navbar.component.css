@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
-nav {
-	height: 10%;
+
+.input-field {
+	float: right;
+}
+
+.nav-extended {
+	margin-bottom: 1px;
 }
 
 ul li {
-	width: 100%;
 	font-size: 1.25em;
 }
 
@@ -34,18 +38,18 @@ input {
 .nav-images {
 	float: left;
 	height: 4em;
-  	margin: 1em 0;	
+  	margin: 1em 0;
 }
-
+.nav-content {
+	background-color: #335964;
+}
 .user-no-photo {
 	display: flex;
 	align-items: center;
 }
-
 .row {
 	margin: 0;
 }
-
-.input-field {
-	float: right;
+.nav-wrapper {
+	background-color: #0B181C ;
 }
