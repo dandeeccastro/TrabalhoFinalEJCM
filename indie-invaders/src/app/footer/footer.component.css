@@ -11,4 +11,8 @@ footer {
 	background-color: #0B181C;
 	border: 1px solid #1E83A2;
 	box-sizing: border-box;
+	height: 35vh;
+}
+footer .row {
+	max-height: 30vh;
 }
