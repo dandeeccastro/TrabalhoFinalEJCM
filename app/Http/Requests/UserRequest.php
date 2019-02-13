@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Requests;
-use App\User;
+//use App\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
@@ -16,6 +16,10 @@ class UserRequest extends FormRequest
     public function authorize()
     {
         return true;
+    }
+    protected function failedValidation(Validator $validator)
+    {
+      throw new HttpResponseException(response()->json($validator->error(),422));
     }
 
     /**
@@ -47,16 +51,13 @@ class UserRequest extends FormRequest
       }
 
     }
-    protected function failedValidation(Validator $validator)
-    {
-      throw new HttpResponseException(response()->json($validator->error(),422));
-    }
+
     public function messages() {
       return [
-        'name.alpha' => 'O nome deve consistir apenas de caracteres alfabéticos.',
+        //'name.alpha' => 'O nome deve consistir apenas de caracteres alfabéticos.',
         'email.email' => 'Digite um email valido.',
-        'email.unique' => 'Este email já foi cadastrado',
-        'c_password.same' => "As senha não sao iguais",
+        //'email.unique' => 'Este email já foi cadastrado',
+        //'c_password.same' => "As senha não sao iguais",
         //mensagens personalizadas aqui
       ];
     }
