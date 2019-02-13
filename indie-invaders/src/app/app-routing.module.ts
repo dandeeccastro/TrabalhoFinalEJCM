@@ -6,12 +6,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ParceriaComponent } from './pages/parceria/parceria.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
 const routes: Routes = [
 	{ path: 'parceria', component: ParceriaComponent },
 	{ path: 'home' , component: HomeComponent },
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
-	{ path: 'sobre', component: SobreComponent}
+	{ path: 'sobre', component: SobreComponent},
+	{ path: 'cadastro', component: CadastroComponent},
 ];
 
 @NgModule({

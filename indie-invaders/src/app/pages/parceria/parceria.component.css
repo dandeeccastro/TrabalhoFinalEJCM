@@ -8,7 +8,7 @@
 	height: 100%;
 	display: flex;
 	justify-content: center;
-	align-items: center;	
+	align-items: center;
 	font-family: 'Dosis', sans-serif;
 	margin: 0 .5em;
 }
@@ -24,6 +24,7 @@
 	background-color: rgba(0,0,0,0.5);
 	background-blend-mode: multiply;
 	background-origin: center;
+	/* margin-top: -5vh; */
 }
 li .container {
 	display: flex;
@@ -32,15 +33,6 @@ li .container {
 }
 .icon {
 	height: 75%;
-}
-.gameboy-text {
-	padding: 0 .5em;
-}
-.gb-textbox {
-	width: 30%;
-	height: 25%;
-	position: relative;
-	top: -35em;
 }
 .descricao-banner .row {
 	height: 120vh;
