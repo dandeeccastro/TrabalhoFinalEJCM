@@ -1,6 +1,19 @@
+h1, h2, h3 {
+    font-family: 'VT323', sans-serif;
+}
+
+p {
+    font-family: 'Dosis', sans-serif;
+    font-size: 2em;
+}
+
 .equipe-list {
     display: flex;
+    justify-content: space-around;
 }
-.equipe-list img {
-    height: 70px;
+.equipe-list li img {
+    height: 3.5%;
+}
+li h3 {
+    text-align: center;
 }
