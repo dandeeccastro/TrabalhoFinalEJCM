@@ -1,30 +1,25 @@
-<div class="navbar-fixed">
-	<nav class="nav-extended">
-		<div class="nav-wrapper">
-			<div class="row">
-				<div class="col l2">
-					<img class="nav-images user-no-photo" src="../../assets/man-user.svg" alt="No User Photo">
-				</div>
-				<div class=" center col l8">
-					<a routerLink="">
-						<img class="logo" src="../../assets/img/indieInvaders.png" alt="">
-					</a>
-				</div>
-				<div class="col l2 input-field">
-					<!-- TODO fix o material icons não aparecer -->
-					<input type="search" name="search">
-					<label class="label-icon" for="search"><i class="material-icons">search</i></label>
-				</div>
-			</div>
-			<div class="nav-content">
-				<ul class="tabs tabs-transparent">
-					<li class="tab"><a routerLink="home">Home</a></li>
-					<li class="tab"><a routerLink="">Categorias</a></li>
-					<li class="tab"><a routerLink="">Desenvolvedores</a></li>
-					<li class="tab"><a routerLink="parceria">Por que ser um parceiro?</a></li>
-					<li class="tab"><a routerLink="sobre">Sobre Nós</a></li>
-				</ul>
-			</div>
+<div class="navbar-fixed"> 
+ <nav class="nav-extended">
+    <div class="row nav-wrapper">
+		<div class="col l2 m2 s3">
+			<img class="nav-images logged-out-user" src="../../assets/man-user.svg" alt="">
 		</div>
-  	</nav>
+		<div class="col l8 m8 s6 center">
+			<a routerLink=""><img class="company-logo" src="../../assets/img/indieInvaders.png" alt="Indie Invaders"></a>
+		</div>
+		<div class="col l2 m2 s3 input-field">
+			<input type="search" name="search">
+			<i class="material-icons">search</i>
+			<label for="search">Pesquisar</label>
+		</div>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+		  <li class="tab"><a routerLink="home">Home</a></li>
+		  <li class="tab"><a routerLink="">Categorias</a></li>
+		  <li class="tab"><a routerLink="parceria">Por que ser um parceiro?</a></li>
+		  <li class="tab"><a routerLink="sobre">Sobre Nós</a></li>
+      </ul>
+    </div>
+  </nav>
 </div>

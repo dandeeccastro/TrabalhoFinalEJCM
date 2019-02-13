@@ -1,9 +1,11 @@
-
 ul {
 	display: flex;
 }
 ul li {
 	margin:0 1em;
+}
+.icone-footer, .rebel {
+	width: 5vw;
 }
 footer {
 	background-color: #0B181C;
