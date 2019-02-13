@@ -1,3 +1,4 @@
+/* TODO: Remover redundância do código */
 .image-banner, .side-banner {
 	height: 50em;
 }
@@ -30,17 +31,16 @@ li .container {
 	align-items: center;
 }
 .icon {
-	height: 12.5em;
+	height: 75%;
 }
 .gameboy-text {
-	font-size: 2em;
 	padding: 0 .5em;
 }
 .gb-textbox {
-	width: 50%;
+	width: 30%;
 	height: 25%;
 	position: relative;
-	top: -59em;
+	top: -35em;
 }
 .descricao-banner .row {
 	height: 120vh;
@@ -57,7 +57,7 @@ button {
 	align-items: center;
 }
 .gameboy {
-	width: 100%;
+	width: 100vw;
 	opacity: 0.3;
 	height: 90vh;
 }
@@ -66,4 +66,17 @@ button {
 }
 .icon-capsule {
 	margin: 3em 0;
+	height: 10em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.icon-capsule h4 {
+	font-size: 175%;
+}
+section {
+	margin: 1em 0;
+}
+h4 {
+	font-family: 'Dosis', sans-serif;
 }

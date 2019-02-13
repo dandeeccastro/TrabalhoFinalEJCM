@@ -4,16 +4,42 @@ h1, h2, h3 {
 
 p {
     font-family: 'Dosis', sans-serif;
-    font-size: 2em;
 }
-
-.equipe-list {
-    display: flex;
-    justify-content: space-around;
-}
-.equipe-list li img {
-    height: 3.5%;
+.flow-text {
+    font-size: 2rem;
 }
 li h3 {
     text-align: center;
+}
+section {
+    height: 75vh;
+    margin: 0.5em 0;
+}
+.first-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../assets/gamersbg.jpg);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+}
+.text-box {
+    height: 100%;
+}
+
+.row {
+    height: 75vh;
+}
+.equipe-list {
+    height: 100%;
+}
+.equipe-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%
+}
+.equipe-list li img {
+    width: 75%;
+    border-radius: 50%;
 }
