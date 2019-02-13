@@ -1,3 +1,51 @@
 <section class="first-section">
-    <app-usuario></app-usuario>
+	<div class="row container">
+		<form class="col s12">
+	    	<div class="row">
+		      <div class="input-field col s8">
+		        <input  id="nome" type="text" class="validate">
+		        <label for="first_name">Nome de Usuário</label>
+		      </div>
+		    </div>
+		    <div class="row">
+		      <div class="input-field col s6">
+		        <input id="password" type="password" class="validate">
+		        <label for="password">Senha</label>
+		      </div>
+		      <div class="input-field col s6">
+		        <input id="password" type="password" class="validate">
+		        <label data-error="Senhas não correspondem" data-success="Senhas iguais" for="password">Confirmar senha</label>
+		      </div>
+		    </div>
+		    <div class="row">
+		      <div class="input-field col s6">
+		        <input id="email" type="email" class="validate">
+		        <label for="email">e-mail</label>
+		      </div>
+		      <div class="input-field col s6">
+		        <input id="email" type="email" class="validate">
+		        <label data-error="e-mail não corresponde" data-success="-email igual" for="email">Confirmar e-mail</label>
+		      </div>
+		    </div>
+		    <div class="row">
+		      <div class="col l4 center-align">
+		        <img class="escolha" src="../../../assets/img/joystick.svg">
+		      </div>
+		      <div class="col l4 center-align">
+		        <div class="switch">
+		          <label>
+		            Jogador
+		            <input type="checkbox">
+		            <span class="lever"></span>
+		            Desenvolvedor
+		          </label>
+		        </div>
+		      </div>
+		      <div class="col l4 center-align">
+		        <img class="escolha" src="../../../assets/img/space-invaders.svg">
+		      </div>
+		    </div>
+		    <app-jogador></app-jogador>
+	    </form>
+    </div>
 </section>

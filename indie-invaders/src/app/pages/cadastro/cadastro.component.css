@@ -1,0 +1,23 @@
+.escolha{
+	width: 100%;
+}
+
+.switch{
+	padding-top: 15vh;
+}
+
+.switch label input[type=checkbox]:checked+.lever {
+  background-color: #21FF21;
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+  background-color: #21FF21;
+}
+
+.switch label .lever{
+	background-color: #FA0FEC;
+}
+
+.switch label .lever:after{
+	background-color: #FA0FEC;
+}
