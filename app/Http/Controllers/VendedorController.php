@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Jogos;
 use Illuminate\Http\Request;
 use App\Vendedor;
 class VendedorController extends Controller
@@ -70,4 +70,11 @@ class VendedorController extends Controller
       $vendedor -> deleteVendedores($id);
       return response()->json(['message' => 'Instancia deletada com sucesso']);
     }
+
+    public function getJogos($id)
+  {
+      $vendedor = Vendedor::findOrFail($id);
+      return response()->json([$vendedor->jogos]);
+  }
+
 }

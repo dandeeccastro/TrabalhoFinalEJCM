@@ -11,6 +11,15 @@ class Jogos extends Model
 
   protected $dates = ['deteled_at'];
 
+  public function clientes()
+    {
+      return $this->belongsToMany('App\Cliente');
+    }
+  public function vendedor()
+  {
+    return $this->belongsTo('App\Vendedor');
+  }
+
   public function insereJogo($request){
     $this ->nome = $request ->nome;
     $this ->preco = $request ->preco;

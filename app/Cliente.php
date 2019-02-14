@@ -15,6 +15,12 @@ class Cliente extends Model
 
     protected $fillable = [];
 
+    public function jogos()
+      {
+        return $this->belongsToMany('App\Jogos');
+      }
+
+
     public function insereCliente($request){
       $this ->numeroCartao = bcrypt($request ->numeroCartao);
       $this ->nomeTitularCartao = $request ->nomeTitularCartao;

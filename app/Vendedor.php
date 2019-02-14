@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Jogos;
 
 class Vendedor extends Model
 {
@@ -11,6 +12,10 @@ class Vendedor extends Model
 
   protected $dates = ['deteled_at'];
 
+  public function jogos()
+  {
+    return $this->hasMany('App\Jogos');
+  }
   public function insereVendedores($request){
     $this ->user_id = $request->user_id;
     $this ->classificacao = $request->classificacao;
