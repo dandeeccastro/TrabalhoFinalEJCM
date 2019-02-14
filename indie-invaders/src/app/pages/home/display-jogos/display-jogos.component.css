@@ -5,6 +5,9 @@ h2 {
 .carousel .carousel-item {
 	width: 500px !important;
 }
+.carousel {
+	margin-top: -5em;
+}
 .scroll-container {
-	margin: 1em 0;
+	margin-top: 10em;
 }
