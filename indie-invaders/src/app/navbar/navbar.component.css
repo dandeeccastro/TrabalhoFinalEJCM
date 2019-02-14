@@ -1,59 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Dosis');
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-
-ul li {
-	font-size: 1.25em;
+.logged-out-user {
+	height: 10vh;
 }
-
-ul li, label {
-	font-family: 'Dosis', sans-serif;
+.company-logo {
+	height: 15vh;
 }
-
-nav .input-field {
-	margin-top: 10vh;
-}
-
-nav input{
-	background-color: lightgrey;
-	padding: 1vw;
-}
-
-.input-field {
-	float: right;
-}
-
-.nav-extended {
-	margin-bottom: 1px;
-}
-
-.menu{
-	background-color: #335964 !important;
-}
-
-.main-navbar{
-	background-color: #0B181C !important;
-	padding-bottom: 1vh !important;
-}
-
-.logo{
-	width: 20%;
-}
-
-.nav-images {
-	float: left;
-	height: 4em;
-  	margin: 1em 0;
-}
-.nav-content {
-	background-color: #335964;
-}
-.user-no-photo {
-	display: flex;
-	align-items: center;
-}
-.row {
-	margin: 0;
+.l8 a {
+	width: 100%;
+	height: 100%;
 }
 .nav-wrapper {
-	background-color: #0B181C ;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #0D1B1B;
+	margin: 0;
+}
+.nav-extended {
+	background-color: #335964;
 }
