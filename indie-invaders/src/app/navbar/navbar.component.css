@@ -1,8 +1,10 @@
 .logged-out-user {
 	height: 10vh;
+	margin-bottom: -3vh;
 }
 .company-logo {
-	height: 15vh;
+	height: 10vh;
+	margin-bottom: -2vh;
 }
 .l8 a {
 	width: 100%;
@@ -13,8 +15,15 @@
 	justify-content: center;
 	align-items: center;
 	background-color: #0D1B1B;
-	margin: 0;
 }
 .nav-extended {
 	background-color: #335964;
+}
+
+.company-logo{
+	height: 20vh;
+}
+
+.navbar-fixed{
+	
 }
