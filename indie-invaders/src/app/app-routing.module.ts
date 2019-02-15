@@ -7,6 +7,7 @@ import { ParceriaComponent } from './pages/parceria/parceria.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { JogosComponent } from './pages/jogos/jogos.component';
 
 const routes: Routes = [
 	{ path: 'parceria', component: ParceriaComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
 	{ path: 'sobre', component: SobreComponent},
 	{ path: 'cadastro', component: CadastroComponent},
+	{ path: 'jogos', component: JogosComponent}
 ];
 
 @NgModule({

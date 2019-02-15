@@ -15,6 +15,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { JogadorComponent } from './pages/cadastro/jogador/jogador.component';
 import { DesenvolvedorComponent } from './pages/cadastro/desenvolvedor/desenvolvedor.component';
 import { UsuarioComponent } from './pages/cadastro/usuario/usuario.component';
+import { JogosComponent } from './pages/jogos/jogos.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UsuarioComponent } from './pages/cadastro/usuario/usuario.component';
 	CadastroComponent,
 	JogadorComponent,
 	DesenvolvedorComponent,
-	UsuarioComponent
+	UsuarioComponent,
+	JogosComponent
   ],
   imports: [
     BrowserModule,
