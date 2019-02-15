@@ -12,7 +12,7 @@ class PassportController extends Controller
 {
   public $successStatus =200;
   public function login(){
-    if (Auth::attempt(['email' => request('email'), 'password' =>request('password')])){
+    if (Auth::attempt(['username' => request('username'), 'password' =>request('password')])){
       $user = Auth::user();
       $success['token'] = $user -> createToken('MyApp') -> accessToken;
       return response() -> json(['success' => $success], $this ->successStatus);
@@ -24,14 +24,14 @@ class PassportController extends Controller
 
   public function register(Request $request){
     $validator = Validator::make($request -> all(),[
-      'name' => 'required|alpha',
-			'email' => 'required|email|unique:users',
-			'password' => 'required',
-			'c_password' => 'required|same:password',
-      'cpf' => 'formato_cpf|required',
-      'telefone' => 'celular',
-      'dataDeNascimento'=>'data|required',
-      'endereco'=>'required'
+      	'name' => 'required|alpha',
+		'email' => 'required|email|unique:users',
+		'password' => 'required',
+		'c_password' => 'required|same:password',
+      	'cpf' => 'formato_cpf|required',
+      	'telefone' => 'celular',
+      	'dataDeNascimento'=>'data|required',
+      	'username'=>'required'
 
 
 
@@ -44,12 +44,12 @@ class PassportController extends Controller
 		$newUser->name = $request ->name;
 		$newUser->email = $request->email;
 		$newUser-> password = bcrypt($request -> password);
-    $newUser->cpf = $request->cpf;
-    $newUser->endereco= $request->endereco;
-    $newUser->dataDeNascimento = $request->dataDeNascimento;
-    $newUser->telefone = $request->telefone;
+    	$newUser->cpf = $request->cpf;
+    	$newUser->username= $request->username;
+    	$newUser->dataDeNascimento = $request->dataDeNascimento;
+    	$newUser->telefone = $request->telefone;
 		$success['token'] = $newUser-> createToken('MyApp')->accessToken;
-		$success['name'] = $newUser-> name;;
+		$success['username'] = $newUser-> username;
 		$newUser-> save();
 		return response()-> json(['success'=>$success], $this -> successStatus);
 	}

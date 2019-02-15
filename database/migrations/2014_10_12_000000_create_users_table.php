@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->string('cpf')->unique();
-            $table->string('endereco');
+            $table->string('username')->unique();
             $table->string('dataDeNascimento');
             $table->string('telefone');
 
