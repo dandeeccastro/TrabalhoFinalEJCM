@@ -1,19 +1,37 @@
 h1, h2, h3 {
     font-family: 'VT323', sans-serif;
 }
-
 p {
     font-family: 'Dosis', sans-serif;
-    font-size: 2em;
-}
-
-.equipe-list {
-    display: flex;
-    justify-content: space-around;
-}
-.equipe-list li img {
-    height: 3.5%;
 }
 li h3 {
     text-align: center;
+}
+section {
+    margin: 0.5em 0;
+}
+.first-section {
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../assets/gamersbg.jpg);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+}
+.text-box {
+    height: 100%;
+}
+.equipe-list {
+    height: 100%;
+}
+.equipe-list li {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.equipe-list li img {
+    width: 50%;
+    border-radius: 50%;
 }

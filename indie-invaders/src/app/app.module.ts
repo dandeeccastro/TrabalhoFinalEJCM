@@ -16,6 +16,7 @@ import { JogadorComponent } from './pages/cadastro/jogador/jogador.component';
 import { DesenvolvedorComponent } from './pages/cadastro/desenvolvedor/desenvolvedor.component';
 import { UsuarioComponent } from './pages/cadastro/usuario/usuario.component';
 import { LoginComponent } from './pages/login/login.component';
+import { JogosComponent } from './pages/jogos/jogos.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LoginComponent } from './pages/login/login.component';
 	JogadorComponent,
 	DesenvolvedorComponent,
 	UsuarioComponent,
-	LoginComponent
+	LoginComponent,
+	JogosComponent
   ],
   imports: [
     BrowserModule,

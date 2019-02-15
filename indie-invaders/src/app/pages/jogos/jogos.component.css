@@ -1,0 +1,18 @@
+h2 {
+    font-family: 'VT323', sans-serif;
+    font-size: 7.5em;
+}
+.box-art {
+    height: 65vh;
+}
+.tag-list {
+    display: flex;
+}
+.tag-list li {
+    border-radius: 10px;
+    color: #dddddd;
+    background-color: #335964;
+    margin: 0 .5em;
+    padding: 0 1em;
+    border: 2px solid #397047;
+}
