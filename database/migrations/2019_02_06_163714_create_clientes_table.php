@@ -17,7 +17,7 @@ class CreateClientesTable extends Migration
             $table->increments('id');
             $table->string('numeroCartao')->unique();
             $table->string('nomeTitularCartao');
-            $table->string('codigoSegurancaCartao')->unique();
+            $table->integer('codigoSegurancaCartao')->unique();
             $table->string('bandeiraCartao');
             $table->string('dataDeVencimentoCartao');
             $table->integer('users_id')->unsigned()->nullable();

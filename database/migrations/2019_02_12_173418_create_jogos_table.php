@@ -20,17 +20,15 @@ class CreateJogosTable extends Migration
             $table->integer('vendedor_id')->unsigned();
             $table->integer('categoria_id')->unsigned();
             $table->string('classificacaoUsuarios')->nullable();
-            $table->string('descricao');
-            $table->string('foto');
-            $table->string('video');
+            $table->longText('descricao');
+            $table->string('foto')->nullable();
+            $table->string('video')->nullable();
             $table->SoftDeletes();
             $table->timestamps();
         });
         Schema::table('jogos', function (Blueprint $table) {
           $table->foreign('vendedor_id')->references('id')->on('vendedors')->onDelete('cascade');
           $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
-          //$table->foreign('foto_id')->references('id')->on('foto')->onDelete('cascade');
-          //$table->foreign('video_id')->references('id')->on('video')->onDelete('cascade');
 
         });
     }

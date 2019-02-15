@@ -31,9 +31,9 @@ class ClienteRequest extends FormRequest
     {
       if ($this->isMethod('post')){
         return [
-          'numeroCartao'=>'required|numeric',
+          'numeroCartao'=>'required|numeric|min:10',
           'nomeTitularCartao'=>'required|alpha',
-          'codigoSegurancaCartao'=>'required|min:3|numeric',
+          'codigoSegurancaCartao'=>'required|numeric|min:3',
           'bandeiraCartao'=>'required',
           'dataDeVencimentoCartao'=>'data|required',
           //regras para método post
@@ -41,9 +41,9 @@ class ClienteRequest extends FormRequest
       }
       if ($this->isMethod('put')){
         return [
-          'numeroCartao'=>'|numeric',
+          'numeroCartao'=>'numeric|min:10',
           'nomeTitularCartao'=>'alpha',
-          'codigoSegurancaCartao'=>'min:3|numeric',
+          'codigoSegurancaCartao'=>'numeric|min:3',
           'dataDeVencimentoCartao'=>'data',
           //regras para método put
         ];
@@ -56,6 +56,7 @@ class ClienteRequest extends FormRequest
         'nomeTitularCartao.required' => 'É necessario o nome do titular do cartão para efetuar a compra',
         'nomeTitularCartao.alpha' => 'Apenas caracteres alfabeticos são aceitos para preencher esse campo.',
         'codigoSegurancaCartao.required'=> 'Adicione seu codigo de segurança para que a compra seja efetuada com sucesso.',
+        'codigoSegurancaCartao.min'=> 'O numero minimo de caracteres são três, por favor tente novamente.',
         'codigoSegurancaCartao.numeric' =>'Utilize apenas numeros para o codigo de segurança',
         'bandeiraCartao.required' =>'É essencial colocar a bandeira do seu cartão.',
         'dataDeVencimentoCartao.data'=> 'Adicione uma data de vencimento valida, o formato esta incorreto.',
