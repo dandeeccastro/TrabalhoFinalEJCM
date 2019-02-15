@@ -34,7 +34,7 @@ Route::group(['middleware' => 'auth:api'], function() {
 
 //Rotas em relação a middleware do Vendedor//
 
-  Route::group(['middleware' => 'VENDEDOR'], function($route){
+  Route::group(['middleware' => 'VendedorWiddleware'], function($route){
 
     // O que o vendedor pode alterar nos jogos //
 

@@ -4,8 +4,11 @@ namespace App\Http\Middleware;
 
 use Closure;
 use App\Vendedor;
+use App\User;
 
-class VENDEDOR
+use Auth;
+
+class VendedorMiddleware
 {
     /**
      * Handle an incoming request.
