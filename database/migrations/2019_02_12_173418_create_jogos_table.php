@@ -22,7 +22,6 @@ class CreateJogosTable extends Migration
             $table->integer('classificacaoUsuarios')->default('5');
             $table->longText('descricao');
             $table->string('foto')->nullable();
-            $table->string('video')->nullable();
             $table->SoftDeletes();
             $table->timestamps();
         });

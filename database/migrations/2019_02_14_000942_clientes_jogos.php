@@ -12,7 +12,6 @@ class ClientesJogos extends Migration
       $table->increments('id');
       $table->integer('cliente_id')->unsigned();
       $table->integer('jogos_id')->unsigned();
-      //$table->SoftDeletes();
       $table->timestamps();
     });
 

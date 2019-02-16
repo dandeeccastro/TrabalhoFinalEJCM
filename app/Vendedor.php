@@ -22,7 +22,6 @@ class Vendedor extends Model
     return $this->hasMany('App\Jogos');
   }
   public function insereVendedores($request){
-    //$this ->user_id = $request->user_id;
     $this ->classificacao = $request->classificacao;
 
     $this -> save();

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Vendedor;
 use App\User;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Resources\VendedorResource;
+use App\Notifications\RegisterNotification;
 class VendedorController extends Controller
 {
   public $successStatus =200;
@@ -57,6 +59,7 @@ class VendedorController extends Controller
   		$success['username'] = $newUser-> username;
       $success['token'] = $newUser-> createToken('MyApp')->accessToken;
   		$success['username'] = $newUser-> username;
+      $newUser->notify(new RegisterNotification($newUser));
 
       $newUser-> save();
 
@@ -88,11 +91,19 @@ class VendedorController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $vendedor =Vendedor::find($id);
+      //$clientes -> updateCliente($request);
+      $newUser= User::find($vendedor->user_id);
+      if($request->email) {
+        $newUser->email = $request->email;
+      }
+      if($request->telefone) {
+        $newUser->telefone = $request->telefone;
+      }
       //encontra o id desejado
-      $vendedor = Vendedor::find($id);
-      //alteras os dados quando aplicável
-      $vendedor -> updateVendedores($request);
-      return response()->json([$vendedor]);
+      $newUser-> save();
+
+      return new VendedorResource($newUser);
     }
 
     /**

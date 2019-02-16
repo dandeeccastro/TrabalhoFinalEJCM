@@ -7,6 +7,9 @@ use App\Http\Requests\ClienteRequest;
 use App\Cliente;
 use App\User;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Resources\ClienteResource;
+use App\Notifications\RegisterNotification;
+
 class ClienteController extends Controller
 {
   public $successStatus =200;
@@ -59,7 +62,7 @@ class ClienteController extends Controller
   		$success['username'] = $newUser-> username;
       $success['token'] = $newUser-> createToken('MyApp')->accessToken;
   		$success['username'] = $newUser-> username;
-
+      $newUser->notify(new RegisterNotification($newUser));
       $newUser-> save();
 
       $clientes = new Cliente;
@@ -105,7 +108,7 @@ class ClienteController extends Controller
       //encontra o id desejado
       $newUser-> save();
 
-      return response()->json([$newUser]);
+      return new ClienteResource($newUser);
     }
 
     /**

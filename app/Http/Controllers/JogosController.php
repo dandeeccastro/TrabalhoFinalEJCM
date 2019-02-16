@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\JogosRequest;
 use App\Jogos;
-
+use App\Vendedor;
+use App\Http\Resources\JogoResource;
 
 class JogosController extends Controller
 {
@@ -17,7 +18,7 @@ class JogosController extends Controller
     public function index()
     {
         $jogos = Jogos::all();
-        return response()->json([$jogos]);
+        return new JogoResource($jogos);
     }
 
     /**
@@ -30,7 +31,7 @@ class JogosController extends Controller
     {
       $jogos = new Jogos;
       $jogos -> insereJogo($request);
-      return response()->json([$jogos]);
+      return new JogoResource($jogos);
     }
 
     /**
@@ -42,7 +43,7 @@ class JogosController extends Controller
     public function show($id)
     {
         $jogos = Jogos::find($id);
-        return response()->json([$jogos]);
+        return new JogoResource($jogos);
     }
 
     /**
@@ -58,7 +59,7 @@ class JogosController extends Controller
         $jogos = Jogos::find($id);
         $jogos -> updateJogos($request);
 
-        return response()->json([$jogos]);
+        return new JogoResource($jogos);
     }
 
     /**
