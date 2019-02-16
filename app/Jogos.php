@@ -26,10 +26,8 @@ class Jogos extends Model
     $this ->classificacaoUsuarios = $request ->classificacaoUsuarios;
     $this ->descricao = $request ->descricao;
     $this ->foto = $request ->foto;
-    $this ->video = $request ->video;
     $this ->vendedor_id = $request ->vendedor_id;
     $this ->categoria_id = $request ->categoria_id;
-    //$this ->users_id = $request ->users_id;
 
     $this -> save();
   }
@@ -41,24 +39,13 @@ class Jogos extends Model
     if($request->preco) {
       $this->preco = $request->preco;
     }
-    if($request->classificaoUsuarios) {
-      $this->classificacaoUsuarios = $request->classificacaoUsuarios;
-    }
     if($request->descricao) {
       $this->descricao = $request->descricao;
     }
     if($request->foto) {
       $this->foto = $request->foto;
     }
-    if($request->video) {
-      $this->video = $request->video;
-    }
-    if($request->vendedor_id) {
-      $this->vendedor_id = $request->vendedor_id;
-    }
-    if($request->categoria_id) {
-      $this->categoria_id = $request->categoria_id;
-    }
+
     $this->save();
   }
   public function deleteJogos($id){

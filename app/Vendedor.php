@@ -12,12 +12,17 @@ class Vendedor extends Model
 
   protected $dates = ['deteled_at'];
 
+  public function user()
+    {
+      return $this->hasOne('App\User');
+    }
+
   public function jogos()
   {
     return $this->hasMany('App\Jogos');
   }
   public function insereVendedores($request){
-    $this ->user_id = $request->user_id;
+    //$this ->user_id = $request->user_id;
     $this ->classificacao = $request->classificacao;
 
     $this -> save();
@@ -27,9 +32,7 @@ class Vendedor extends Model
     if($request->classificacao) {
       $this->classificacao = $request->classificacao;
     }
-    if($request->user_id) {
-      $this->user_id = $request->user_id;
-    }
+
     $this->save();
   }
   public function deleteVendedores($id){

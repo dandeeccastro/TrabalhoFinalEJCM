@@ -12,7 +12,14 @@ class User extends Authenticatable
 
     use Notifiable;
     use HasApiTokens; //indicar que o import acima será utilizado
-
+    public function vendedor()
+      {
+        return $this->belongsTo('App\Vendedor');
+      }
+    public function clientes()
+        {
+          return $this->belongsTo('App\Cliente');
+        }
 
 
     /**

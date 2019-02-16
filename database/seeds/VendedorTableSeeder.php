@@ -12,6 +12,16 @@ class VendedorTableSeeder extends Seeder
      */
     public function run()
     {
+      DB::table('vendedors')->insert([
+      'classificacao' => '4',
+      'users_id' => '4'
+    ]);
+    DB::table('vendedors')->insert([
+    'numeroCartao' => '4',
+    'users_id' => '5'
+  ]);
+
+
         //
     }
 }

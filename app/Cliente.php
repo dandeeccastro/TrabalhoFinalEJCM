@@ -14,7 +14,10 @@ class Cliente extends Model
 
 
     protected $fillable = [];
-
+    public function user()
+      {
+        return $this->hasOne('App\User');
+      }
     public function jogos()
       {
         return $this->belongsToMany('App\Jogos');
@@ -27,7 +30,7 @@ class Cliente extends Model
       $this ->codigoSegurancaCartao = bcrypt($request ->codigoSegurancaCartao);
       $this ->bandeiraCartao = $request ->bandeiraCartao;
       $this ->dataDeVencimentoCartao = $request ->dataDeVencimentoCartao;
-      $this ->users_id = $request ->users_id;
+      //$this ->users_id = $request ->users_id;
 
       $this -> save();
     }
@@ -48,9 +51,9 @@ class Cliente extends Model
       if($request->dataDeVencimentoCartao) {
         $this->dataDeVencimentoCartao = $request->dataDeVencimentoCartao;
       }
-      if($request->users_id) {
-        $clientes->users_id = $request->users_id;
-      }
+      //if($request->users_id) {
+        //$clientes->users_id = $request->users_id;
+      //}
       //salva
       $this->save();
     }
