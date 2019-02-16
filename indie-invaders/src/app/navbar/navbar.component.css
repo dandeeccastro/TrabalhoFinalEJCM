@@ -1,7 +1,7 @@
 .logged-out-user {
 	width: 100%;
-	max-width: 6vw;
-	min-width: 6vw;
+	max-width: 5vw;
+	min-width: 5vw;
 	display: block;
     margin-left: auto;
     margin-right: auto;
@@ -30,6 +30,10 @@
 	background-color: #335964;
 }
 
+.background{
+	background-color: #0D1B1B;
+}
+
 .navbar-fixed{
 	height: 25vh;
 }
@@ -45,6 +49,14 @@ nav{
 input{
 	border-radius: 10px !important;
 	padding: 1vh !important;
+}
+
+.side-nav{
+	background-color: #335964;
+}
+
+.subtopico{
+	color: white;
 }
 
 @media only screen and (max-width: 650px) {
