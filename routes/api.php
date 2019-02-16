@@ -30,6 +30,20 @@ Route::post('register', 'API\PassportController@register');
 Route::group(['middleware' => 'auth:api'], function() {
   Route::get('logout', 'API\PassportController@logout');
   Route::post('get-details', 'API\PassportController@getDetails');
+
+  //Rotas em relação a middleware do Vendedor//
+
+  Route::group(['middleware' => 'VendedorMiddleware'], function(){
+
+    // O que o vendedor pode alterar nos jogos //
+
+    Route::put('updateJogos','JogosController@update');
+    Route::delete('destroyJogos', 'JogosController@destroy');
+    Route::post('createJogos','JogosController@store')->middleware('vendedorMiddleware');
+    Route::get('showJogos','JogosController@index');
+
+  });
+
 });
 
 Route::get('getJogos/{id}', 'VendedorController@getJogos');

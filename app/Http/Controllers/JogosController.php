@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\JogosRequest;
 use App\Jogos;
+use Auth;
 
 
 class JogosController extends Controller
@@ -16,7 +17,8 @@ class JogosController extends Controller
      */
     public function index()
     {
-        $jogos = Jogos::all();
+        $user = Auth::user()->Vendedor;
+        $jogos = Jogos::where('vendedor_id' , $user->id)->get();
         return response()->json([$jogos]);
     }
 
@@ -28,6 +30,7 @@ class JogosController extends Controller
      */
     public function store(JogosRequest $request)
     {
+      
       $jogos = new Jogos;
       $jogos -> insereJogo($request);
       return response()->json([$jogos]);
