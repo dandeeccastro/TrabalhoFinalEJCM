@@ -1,9 +1,10 @@
 <div class="navbar-fixed"> 
 	<nav class="nav-extended">
-	    <div class="row nav-wrapper">
-		    <div class="usuario col l4 m4 s4">
+		<div class="row nav-wrapper">
+			<a materialize="sideNav" href="#" data-activates="slide-out" class="button-collapse hide-on-large-only"><i class="large material-icons">dehaze</i></a>
+			  <div class="usuario col l4 m4 s4 hide-on-med-and-down">
 					<div class="col l4 m4 s4">
-							<a href='#'><img  data-activates='dropdown1' class="dropdown-button nav-images logged-out-user" src="../../assets/man-user.svg" alt=""></a>
+						<a href='#'><img  data-activates='dropdown1' class="dropdown-button nav-images logged-out-user" src="../../assets/man-user.svg" alt=""></a>
 							<ul id='dropdown1' class='dropdown-content'>
 								<li><a href="#!">one</a></li>
 								<li><a href="#!">two</a></li>
@@ -12,31 +13,50 @@
 								<li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
 								<li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
 							</ul>
+						</div>
+						<div class="col l8 m8 s8">
+							<div class="conta row">
+								<a href="login">Logar</a>
+							</div>
+							<div class="conta row">
+								<a href="cadastro">Criar conta</a>
+							</div>
+						</div>
+			    </div>
+					<div class="col l4 m4 s4 center">
+						<a class="icone" routerLink="home"><img class="company-logo" src="../../assets/img/indieInvaders.png" alt="Indie Invaders"></a>
 					</div>
-					<div class="col l8 m8 s8">
-						<div class="conta row">
-							<a href="login">Logar</a>
-						</div>
-						<div class="conta row">
-							<a href="cadastro">Criar conta</a>
-						</div>
+					<div class="col l4 m4 s4 input-field">
+						<input type="search" name="search">
+						<label for="search">Pesquisar</label>
 					</div>
 		    </div>
-				<div class="col l4 m4 s4 center">
-					<a class="icone" routerLink=""><img class="company-logo" src="../../assets/img/indieInvaders.png" alt="Indie Invaders"></a>
-				</div>
-				<div class="col l4 m4 s4 input-field">
-					<input type="search" name="search">
-					<label for="search">Pesquisar</label>
-				</div>
-	    </div>
-	    <div class="nav-content">
-		<ul class="tabs tabs-transparent">
-			<li class="tab"><a routerLink="home">Home</a></li>
-			<li class="tab"><a routerLink="">Categorias</a></li>
-			<li class="tab"><a routerLink="parceria">Por que ser um parceiro?</a></li>
-			<li class="tab"><a routerLink="sobre">Sobre Nós</a></li>
-		</ul>
-	</div>
+		    <div class="nav-content hide-on-med-and-down">
+			<ul class="tabs tabs-transparent">
+				<li class="tab"><a routerLink="home">Home</a></li>
+				<li class="tab"><a routerLink="">Categorias</a></li>
+				<li class="tab"><a routerLink="parceria">Por que ser um parceiro?</a></li>
+				<li class="tab"><a routerLink="sobre">Sobre Nós</a></li>
+			</ul>
+		</div>
 	</nav>
+	<!-- side-nav-->
 </div>
+<ul id="slide-out" class="side-nav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="images/office.jpg">
+      </div>
+      <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+      <a href="#!name"><span class="white-text name">John Doe</span></a>
+      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Navegação</a></li>
+		<li><a class="waves-effect" routerLink="home">Home</a></li>
+		<li><a class="waves-effect" routerLink="">Categorias</a></li>
+		<li><a class="waves-effect" routerLink="parceria">Por que ser um parceiro?</a></li>
+		<li><a class="waves-effect" routerLink="sobre">Sobre Nós</a></li>
+  </ul>
