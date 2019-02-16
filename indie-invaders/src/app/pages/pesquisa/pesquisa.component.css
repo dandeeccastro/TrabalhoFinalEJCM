@@ -1,0 +1,33 @@
+.category-list li {
+    border-radius: 10px;
+    color: #dddddd;
+    background-color: #335964;
+    margin: 0.25em .5em;
+    padding: 0 1em;
+    border: 2px solid #397047;
+}
+.categories h2 {
+    font-family: 'VT323', sans-serif;
+}
+.category-list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    border: 2px solid rgb(34, 50, 73);
+    border-radius: .25em;
+}
+aside {
+    width: 40vw;
+}
+.game-list {
+    background-color: rgb(34, 50, 73);
+    border-radius: .25em;
+    padding: .25em;
+}
+.game {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5em;
+    margin: .25em;
+    background-color: rgb(50, 72, 102);
+    border-radius: .125em;
+}

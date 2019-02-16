@@ -3,7 +3,7 @@ h2 {
     font-size: 7.5em;
 }
 .box-art {
-    height: 65vh;
+    width: 30vw;
 }
 .tag-list {
     display: flex;
@@ -15,4 +15,15 @@ h2 {
     margin: 0 .5em;
     padding: 0 1em;
     border: 2px solid #397047;
+}
+.btn-large {
+    border-radius: 3em;
+    background-color: #1E83A2;
+}
+.grade-container p {
+    font-size: 7.5em;
+    font-family: 'Dosis', sans-serif;
+}
+.grade {
+    color: rgb(63, 182, 16);
 }

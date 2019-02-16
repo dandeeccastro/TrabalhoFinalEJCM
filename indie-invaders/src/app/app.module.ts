@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { MaterializeModule } from 'angular2-materialize';
+
+/* COMPONENTS */
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ParceriaComponent } from './pages/parceria/parceria.component';
@@ -17,6 +19,11 @@ import { DesenvolvedorComponent } from './pages/cadastro/desenvolvedor/desenvolv
 import { UsuarioComponent } from './pages/cadastro/usuario/usuario.component';
 import { LoginComponent } from './pages/login/login.component';
 import { JogosComponent } from './pages/jogos/jogos.component';
+import { PesquisaComponent } from './pages/pesquisa/pesquisa.component';
+
+/* SERVICES E AFINS */
+import { HttpClientModule } from '@angular/common/http';
+import { PesquisaService } from './service/pesquisa.service';
 
 @NgModule({
   declarations: [
@@ -32,14 +39,19 @@ import { JogosComponent } from './pages/jogos/jogos.component';
 	DesenvolvedorComponent,
 	UsuarioComponent,
 	LoginComponent,
-	JogosComponent
+	JogosComponent,
+	PesquisaComponent
   ],
   imports: [
     BrowserModule,
 	AppRoutingModule,
-	MaterializeModule
+	MaterializeModule,
+	HttpClientModule
   ],
-  providers: [],
+  providers: [
+		HttpClientModule,
+		PesquisaComponent
+	],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
