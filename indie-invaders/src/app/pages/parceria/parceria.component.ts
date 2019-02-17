@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScrolltopService } from '../../service/scrolltop.service';
 
 @Component({
   selector: 'app-parceria',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParceriaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private scrolltop : ScrolltopService) { }
 
   ngOnInit() {
+    this.scrolltop.setScrollTop();
   }
 
 }

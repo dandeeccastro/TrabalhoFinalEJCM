@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PesquisaService } from '../../service/pesquisa.service';
 import { Router } from '@angular/router'; 
+import { ScrolltopService } from '../../service/scrolltop.service';
 
 @Component({
   selector: 'app-pesquisa',
@@ -16,9 +17,10 @@ export class PesquisaComponent implements OnInit {
     "Doom", "Warcraft", "Lolzin", "Furi", "Fez", "Celeste", "Warhammer 4k"
   ]
   private siteUrl: string = "http://localhost:4200";
-  constructor(public pesquisaService: PesquisaService,private router: Router) { }
+  constructor(private scrolltop : ScrolltopService, public pesquisaService: PesquisaService,private router: Router) { }
 
   ngOnInit() {
+    this.scrolltop.setScrollTop();
   }
 
   checkGame() {
