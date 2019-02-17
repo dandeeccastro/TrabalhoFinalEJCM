@@ -33,3 +33,7 @@ Route::group(['middleware' => 'auth:api'], function() {
 });
 
 Route::get('getJogos/{id}', 'VendedorController@getJogos');
+
+Route::get('getCategoria/{id}', 'JogosController@getCategoria');
+
+Route::post('compra', 'ClienteController@compra');

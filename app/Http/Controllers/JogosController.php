@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\JogosRequest;
 use App\Jogos;
 use App\Vendedor;
+use App\Categoria;
 use App\Http\Resources\JogoResource;
 
 class JogosController extends Controller
@@ -74,4 +75,10 @@ class JogosController extends Controller
       $jogos -> deleteJogos($id);
       return response()->json(['message' => 'Instancia deletada com sucesso']);
     }
+    //funcao que printa os jogos de uma categoria
+    public function getCategoria($id)
+  {
+      $categoria = Categoria::findOrFail($id);
+      return new JogoResource($categoria->jogos);
+  }
 }

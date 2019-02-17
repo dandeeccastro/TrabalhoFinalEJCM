@@ -19,6 +19,10 @@ class Jogos extends Model
   {
     return $this->belongsTo('App\Vendedor');
   }
+  public function categoria()
+  {
+    return $this->belongsTo('App\Categoria');
+  }
 
   public function insereJogo($request){
     $this ->nome = $request ->nome;

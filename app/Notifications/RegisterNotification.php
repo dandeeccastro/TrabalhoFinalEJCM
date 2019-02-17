@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-
+use DB;
 class RegisterNotification extends Notification
 {
     use Queueable;
@@ -41,9 +41,11 @@ class RegisterNotification extends Notification
     public function toMail($notifiable)
     {
       $newUser = $notifiable;
+      //$user=DB::table('users')->where('user_id',$user->id)->orderBy('id','desc')->first();
         return (new MailMessage)
                     ->greeting('Olá querido(a), '.$newUser->name)
                     ->line('Obrigado por se cadastrar no nosso site, será um prazer ter você aqui como nosso cliente.')
+                    ->line('Seu nome de usuario é ' .$newUser->username)
                     ->line('Aproveite esse tempo!');
     }
 

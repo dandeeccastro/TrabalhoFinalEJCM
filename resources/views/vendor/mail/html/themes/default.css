@@ -40,7 +40,7 @@ a img {
 /* Typography */
 
 h1 {
-    color: #2F3133;
+    color: white;
     font-size: 19px;
     font-weight: bold;
     margin-top: 0;
@@ -48,7 +48,7 @@ h1 {
 }
 
 h2 {
-    color: #2F3133;
+    color: white;
     font-size: 16px;
     font-weight: bold;
     margin-top: 0;
@@ -82,7 +82,6 @@ img {
 /* Layout */
 
 .wrapper {
-    background-color: red;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -103,8 +102,10 @@ img {
 /* Header */
 
 .header {
+
     padding: 25px 0;
     text-align: center;
+    background-color:#8B0000;
 }
 
 .header a {
@@ -113,6 +114,7 @@ img {
     font-weight: bold;
     text-decoration: none;
     text-shadow: 0 1px 0 white;
+
 }
 
 /* Body */
@@ -168,6 +170,7 @@ img {
     color: #AEAEAE;
     font-size: 12px;
     text-align: center;
+    background-color: white;
 }
 
 /* Tables */
@@ -250,15 +253,17 @@ img {
 
 .panel {
     margin: 0 0 21px;
+    background-color: white;
 }
 
 .panel-content {
-    background-color: #EDEFF2;
+    background-color: white;
     padding: 16px;
 }
 
 .panel-item {
     padding: 0;
+    background-color: white;
 }
 
 .panel-item p:last-of-type {

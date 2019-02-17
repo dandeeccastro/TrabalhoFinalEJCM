@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categoria extends Model
 {
+  public function jogos()
+    {
+      return $this->hasOne('App\Jogos');
+    }
   public function insereCategoria($request){
     $this ->nome = $request->nome;
 

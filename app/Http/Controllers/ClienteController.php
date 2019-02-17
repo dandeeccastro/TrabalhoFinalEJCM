@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ClienteRequest;
 use App\Cliente;
 use App\User;
+use App\Jogos;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\ClienteResource;
 use App\Notifications\RegisterNotification;
@@ -122,5 +123,12 @@ class ClienteController extends Controller
       $clientes = new Cliente;
       $clientes -> deleteClientes($id);
       return response()->json(['message' => 'Instancia deletada com sucesso']);
+    }
+    public function compra(Request $request)
+    {
+      $clientes = Cliente::findOrFail($request->cliente_id);
+      $clientes->jogos()->attach($request->jogo_id);
+      $clientes-> save();
+      return response()->json(['message' => 'Operação realizada com sucesso.']);
     }
 }
