@@ -22,17 +22,13 @@ Route::apiResource('vendedor', 'VendedorController');
 Route::apiResource('jogos', 'JogosController');
 Route::apiResource('categoria', 'CategoriaController');
 
-
-
 Route::post('login', 'API\PassportController@login');
 Route::post('register', 'API\PassportController@register');
 
 Route::group(['middleware' => 'auth:api'], function() {
   Route::get('logout', 'API\PassportController@logout');
   Route::post('get-details', 'API\PassportController@getDetails');
-  
   Route::post('createjogos','JogosController@store');
-  Route::get('showjogos','JogosController@index');
 
   //Rotas em relação a middleware do Vendedor//
 
@@ -42,13 +38,10 @@ Route::group(['middleware' => 'auth:api'], function() {
 
     Route::put('updatejogos/{id}','JogosController@update');
     Route::delete('deletejogos/{id}', 'JogosController@destroy');
-    //Route::post('createJogos','JogosController@store');
-    //Route::get('showJogos','JogosController@index');
+    Route::get('showjogos','JogosController@jogosVendedor');
 
   
   });
-
-
 });
 
 Route::get('getJogos/{id}', 'VendedorController@getJogos');

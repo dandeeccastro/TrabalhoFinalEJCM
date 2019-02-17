@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\JogosRequest;
 use App\Jogos;
+use Auth;
+use App\User;
+use App\Vendedor;
 
 
 class JogosController extends Controller
@@ -73,4 +76,14 @@ class JogosController extends Controller
       $jogos -> deleteJogos($id);
       return response()->json(['message' => 'Instancia deletada com sucesso']);
     }
+    
+    public function jogosVendedor(){
+      dd("entrei");
+     // $user = Auth::user();
+      dd($user);
+      $vendedor = vendedor::where('user_id', $user->id)->first();
+      $jogos = Jogos::where('vendedor_id', $vendedor->id)->get();
+      return response()->json([$jogos]);
+    }
+
 }

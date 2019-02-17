@@ -18,19 +18,19 @@ class VendedorMiddleware
      */
     public function handle($request, Closure $next)
     {
-        //Caso o Vendedor esteja logado ele pode fazer alterações nos jogos//
-       
-        $user=Auth::user();
-        $vendedor=$user->vendedor;
-        $jogo = Jogos::find($request->id);
+        dd("entrei");
 
-        if($jogo->vendedor_id==$vendedor->id){
-            dd('passei');
+        //Caso o Vendedor esteja logado ele pode fazer alterações nos jogos//
+        $user=Auth::user();
+        
+
+        $vendedor=Auth::user()->vendedor;
+
+        if(vendedor::where('user_id' , '=' , $user->id)->first()){
             return $next($request);
         }
     
          else{
-            dd('npassei');
             return response()->json(['message'=>'Acesso Negado']);
         }
     }
