@@ -3,11 +3,27 @@ h2 {
 	margin: 0;
 }
 .carousel .carousel-item {
-	width: 500px !important;
+	width: 450px !important;
 }
 .carousel {
 	margin-top: -5em;
+	width: 90%;
 }
 .scroll-container {
 	margin-top: 10em;
+}
+.preco {
+	position: absolute;
+	font-size: 2em;
+	font-family: 'Dosis', sans-serif;
+	background-color: grey;
+	border-radius: 10%;
+	top: 5em;
+	left: 11.5em;
+	padding: 0  !important;
+
+	transition: background-color .1s ease-in;
+}
+.preco:hover {
+	background-color: deepskyblue;
 }

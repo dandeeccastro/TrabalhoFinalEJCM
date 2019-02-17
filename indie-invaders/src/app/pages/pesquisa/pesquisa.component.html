@@ -16,11 +16,13 @@
   <div class="col l6 m6 game-list-container">
     <ul class="game-list">
       <li class="game" *ngFor="let game of games">
-        {{game}} 
+        {{ game }} 
         <span> 
           <button class="btn right cart"><i class="material-icons">shopping_cart</i></button> 
           <button class="btn right goToPage" (click)="checkGame()">Ver</button></span> 
       </li>
     </ul>
+    <button class="btn back"><i class="material-icons">arrow_back</i></button>
+    <button class="btn next"><i class="material-icons">arrow_forward</i></button>
   </div>
 </div>
