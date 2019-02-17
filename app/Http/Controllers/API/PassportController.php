@@ -62,6 +62,12 @@ class PassportController extends Controller
 		DB::table('oauth_refresh_tokens')-> where('access_token_id', $accessToken-> id)-> update(['revoked'=>true]);
 		$accessToken->revoke();
 		return response()->json(null, 204);
-	}
+  }
+  
+  public function selfUpdate(UserRequest $request){
+    $user = Auth::user();
+    $user->updateUser($request);
+    return response()->json([$user]);
+  } 
 
 }

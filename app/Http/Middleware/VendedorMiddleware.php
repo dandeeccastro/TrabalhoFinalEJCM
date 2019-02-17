@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use App\Vendedor;
 use App\User;
+use Auth;
 
 class VendedorMiddleware
 {
@@ -18,17 +19,19 @@ class VendedorMiddleware
     public function handle($request, Closure $next)
     {
         //Caso o Vendedor esteja logado ele pode fazer alterações nos jogos//
+       
         $user=Auth::user();
-        $vendedor=Auth::user()->Vendedor;
-        dd ("entreinamiddleware");
-        dd (Vendedor::where('user_id','=', $user->id)->first());
+        $vendedor=$user->vendedor;
+        $jogo = Jogos::find($request->id);
 
-        if(Vendedor::where('user_id','=', $user->id)->first()){
+        if($jogo->vendedor_id==$vendedor->id){
+            dd('passei');
             return $next($request);
         }
     
          else{
-            return['Acesso Negado'];
+            dd('npassei');
+            return response()->json(['message'=>'Acesso Negado']);
         }
     }
 }
