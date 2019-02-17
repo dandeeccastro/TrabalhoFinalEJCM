@@ -18,7 +18,7 @@ class VendedorMiddleware
      */
     public function handle($request, Closure $next)
     {
-        dd("entrei");
+    
 
         //Caso o Vendedor esteja logado ele pode fazer alterações nos jogos//
         $user=Auth::user();

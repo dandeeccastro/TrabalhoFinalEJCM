@@ -78,9 +78,9 @@ class JogosController extends Controller
     }
     
     public function jogosVendedor(){
-      dd("entrei");
-     // $user = Auth::user();
-      dd($user);
+      
+      $user = Auth::user();
+      
       $vendedor = vendedor::where('user_id', $user->id)->first();
       $jogos = Jogos::where('vendedor_id', $vendedor->id)->get();
       return response()->json([$jogos]);
