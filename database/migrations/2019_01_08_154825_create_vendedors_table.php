@@ -15,7 +15,10 @@ class CreateVendedorsTable extends Migration
     {
         Schema::create('vendedors', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('classificacao')->nullable();
+            $table->string('ContaCorrente')->nullable()->unique();
+            $table->string('agencia')->nullable();
+            $table->string('banco')->nullable();
+            $table->string('operacao')->nullable();
             $table->integer('user_id')->unsigned();
             $table->SoftDeletes();
             $table->timestamps();

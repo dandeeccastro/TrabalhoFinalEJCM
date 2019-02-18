@@ -52,3 +52,4 @@ Route::group(['middleware' => 'auth:api'], function() {
 
 Route::get('downloadFoto/{id}','JogosController@downloadFoto');
 Route::get('getJogos/{id}', 'VendedorController@getJogos');
+Route::get('jogosDoAno','JogosController@jogosDoAno');

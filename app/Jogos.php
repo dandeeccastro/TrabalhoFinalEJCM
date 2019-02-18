@@ -23,7 +23,8 @@ class Jogos extends Model
   public function insereJogo($request){
     $this ->nome = $request ->nome;
     $this ->preco = $request ->preco;
-    //$this ->classificacaoUsuarios = $request ->classificacaoUsuarios;
+    $this ->anoDoLancamento = $request ->anoDoLancamento;
+    $this ->mesDeLancamento = $request ->mesDeLancamento;
     $this ->descricao = $request ->descricao;
     $this ->foto = $request ->foto;
     $this ->vendedor_id = $request ->vendedor_id;
@@ -35,6 +36,12 @@ class Jogos extends Model
     //alteras os dados quando aplicável
     if($request->nome) {
       $this->nome = $request->nome;
+    }
+    if($request->anoDoLancamento) {
+      $this->anoDoLancamento = $request->anoDoLancamento;
+    }
+    if($request->mesDeLancamento) {
+      $this->mesDeLancamento = $request->mesDeLancamento;
     }
     if($request->preco) {
       $this->preco = $request->preco;

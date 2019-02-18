@@ -10,6 +10,7 @@ use App\User;
 use App\Vendedor;
 use Illuminate\Support\Facades\Storage;
 use Validator;
+use Carbon\Carbon;
 
 
 class JogosController extends Controller
@@ -123,6 +124,15 @@ class JogosController extends Controller
       $vendedor = vendedor::where('user_id', $user->id)->first();
       $jogos = Jogos::where('vendedor_id', $vendedor->id)->get();
       return response()->json([$jogos]);
+    }
+
+    public function jogosDoAno(){
+      $date = Carbon::now();
+      $year = $date->year;
+      $jogos = Jogos::where('anoDoLancamento', $year)->orderBy('mesDeLancamento', 'desc')->get();
+
+      return response()->json([$jogos]);
+
     }
 
 }
