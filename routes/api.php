@@ -30,9 +30,15 @@ Route::group(['middleware' => 'auth:api'], function() {
   Route::post('get-details', 'API\PassportController@getDetails');
   Route::post('createjogos','JogosController@store');
 
+  Route::put('updateCliente/{id}','ClienteController@update');
+
+
   //Rotas em relação a middleware do Vendedor//
 
   Route::group(['middleware' => 'vendedorMiddleware'], function($router){
+
+    //Ele tem que ser um vendedor para poder se alterar e a middleware verifica se ele é um vendedor
+    Route::put('updateVendedor/{id}','VendedorController@update');
 
     // O que o vendedor pode alterar nos jogos //
 

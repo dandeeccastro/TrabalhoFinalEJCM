@@ -63,11 +63,16 @@ class PassportController extends Controller
 		$accessToken->revoke();
 		return response()->json(null, 204);
   }
-  
-  public function selfUpdate(UserRequest $request){
-    $user = Auth::user();
-    $user->updateUser($request);
-    return response()->json([$user]);
-  } 
+
+  //public function selfUpdateVendedor(UserRequest $request){
+  //  $user = Auth::user();
+  //  $user->update($request);
+  //  return response()->json([$user]);
+//  }
+
+//  public function selfUpdateCliente(UserRequest $request){
+  //  $user = Auth::user();
+  //  $user->update($request);
+  //  return response()->json([$user]);
 
 }

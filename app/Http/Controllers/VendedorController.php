@@ -88,11 +88,28 @@ class VendedorController extends Controller
      */
     public function update(Request $request, $id)
     {
-      //encontra o id desejado
-      $vendedor = Vendedor::find($id);
       //alteras os dados quando aplicável
-      $vendedor -> updateVendedores($request);
-      return response()->json([$vendedor]);
+      $vendedor = Vendedor::find($id);
+
+      //$clientes -> updateCliente($request);
+      $newUser= User::find($vendedor->user_id);
+
+      if($request->username) {
+        $newUser->username = $request->username;
+      }
+      if($request->email) {
+        $newUser->email = $request->email;
+      }
+      if($request->telefone) {
+        $newUser->telefone = $request->telefone;
+      }
+      //encontra o id desejado
+      $newUser-> save();
+
+      $vendedor= Vendedor::find($id);
+      $vendedor->updateVendedores($request);
+
+      return response()->json([$newUser]);
     }
 
     /**

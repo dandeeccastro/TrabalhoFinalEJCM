@@ -105,6 +105,9 @@ class ClienteController extends Controller
       //encontra o id desejado
       $newUser-> save();
 
+      $cliente = Cliente::find($id);
+      $cliente->updateCliente($request);
+
       return response()->json([$newUser]);
     }
 
