@@ -39,39 +39,40 @@ class JogosController extends Controller
 
        //Pega o arquivo da request
 
-        $file = $request->file('photo');
+        $file = $request->file('foto');
 
         //Cria um nome unico para a foto
 
-        $filename = 'foto.'.$file->getClienteOriginalExtension();
+        $filename = 'foto.'.$file->getClientOriginalExtension();
 
         //Cria a pasta de fotos caso não exista
 
-        if (!Storage::exists('localPhotos/'))
-          Storage::makeDirectory('localPhotos/',0775,true);
+        if (!Storage::exists('jogosFoto/'))
+          Storage::makeDirectory('jogosFoto/',0775,true);
 
         //Valida a foto
         $validator = Validator::make($request->all(), [
-            'photo' =>'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
+            'foto' =>'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
         ]);
         //Caso a requisição venha fora do esperado retorna um erro Bad Request 400
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 400);
         }
-        
-        
-        $path = $file->storeAs('JogosPhotos', $filename);
 
-        $jogos->photo = $path;
-        
+
+        $path = $file->storeAs('Jogosfoto', $filename);
+
+        $jogos->foto = $path;
+
         $jogos->save();
 
       return response()->json([$jogos]);
     }
 
-    public function downloadPhoto($id){
+    public function downloadFoto($id){
       $jogos = Jogos::findOrFail($id);
-      return response()->download(storage_path('app/'.$jogos->photo));
+    //  $jogos -> downloadJ($request);
+      return response()->download(storage_path('app/'.$jogos->foto));
   }
 
     /**
@@ -114,11 +115,11 @@ class JogosController extends Controller
       $jogos -> deleteJogos($id);
       return response()->json(['message' => 'Instancia deletada com sucesso']);
     }
-    
+
     public function jogosVendedor(){
-      
+
       $user = Auth::user();
-      
+
       $vendedor = vendedor::where('user_id', $user->id)->first();
       $jogos = Jogos::where('vendedor_id', $vendedor->id)->get();
       return response()->json([$jogos]);

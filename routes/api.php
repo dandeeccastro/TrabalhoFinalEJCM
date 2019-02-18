@@ -40,8 +40,9 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::delete('deletejogos/{id}', 'JogosController@destroy');
     Route::get('showjogos','JogosController@jogosVendedor');
 
-  
+
   });
 });
 
+Route::get('downloadFoto/{id}','JogosController@downloadFoto');
 Route::get('getJogos/{id}', 'VendedorController@getJogos');
