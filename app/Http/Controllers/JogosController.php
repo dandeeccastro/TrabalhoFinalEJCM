@@ -79,6 +79,6 @@ class JogosController extends Controller
     public function getCategoria($id)
   {
       $categoria = Categoria::findOrFail($id);
-      return new JogoResource($categoria->jogos);
+      return response()->json([$categoria->jogos]);
   }
 }

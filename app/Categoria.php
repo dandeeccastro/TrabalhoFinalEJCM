@@ -8,7 +8,7 @@ class Categoria extends Model
 {
   public function jogos()
     {
-      return $this->hasOne('App\Jogos');
+      return $this->hasMany('App\Jogos');
     }
   public function insereCategoria($request){
     $this ->nome = $request->nome;

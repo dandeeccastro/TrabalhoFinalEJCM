@@ -11,9 +11,11 @@ class Jogos extends Model
 
   protected $dates = ['deteled_at'];
 
+  protected $fillable = [];
+
   public function clientes()
     {
-      return $this->belongsToMany('App\Cliente');
+      return $this->belongsToMany('App\Cliente','clienteJogos','cliente_id','jogos_id')->as('clienteJogos')->withTimestamps();
     }
   public function vendedor()
   {
