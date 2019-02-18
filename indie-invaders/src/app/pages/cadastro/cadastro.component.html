@@ -1,28 +1,28 @@
 <section class="first-section">
 	<div class="row container">
 		<form class="col l12 m12 s12">
-			<app-usuario></app-usuario>
-			<!-- Escolha do usuario entre jogador e desenvolvedor -->
-			<div class="tipo row">
-			  <div class="col l4 center-align">
-			    <img class="escolha" src="../../../assets/img/joystick.svg">
-			  </div>
-			  <div class="col l4 center-align">
-			    <div class="switch">
-			      <label>
-			        Jogador
-			        <input type="checkbox">
-			        <span class="lever"></span>
-			        Desenvolvedor
-			      </label>
-			    </div>
-			  </div>
-			  <div class="col l4 center-align">
-			    <img class="escolha" src="../../../assets/img/					space-invaders.svg">
-			  </div>
+		<app-usuario></app-usuario>
+		<!-- Escolha do usuario entre jogador e desenvolvedor -->
+		<div class="tipo row valign-wrapper">
+		  <div class="col l4 m3 s3 center-align">
+		    <img class="escolha" src="../../../assets/img/joystick.svg">
+		  </div>
+		  <div class="col l4 m6 s6 center-align">
+		    <div class="switch">
+			    <label>
+	        Jogador
+			      <input type="checkbox">
+			      <span class="lever"></span>
+	        Desenvolvedor
+			    </label>
+		    </div>
 			</div>
-			<app-jogador></app-jogador>
-			<app-desenvolvedor></app-desenvolvedor>
-	    </form>
-    </div>
+			<div class="col l4 m3 s3 center-align">
+			  <img class="escolha" src="../../../assets/img/space-invaders.svg">
+			 </div>
+		</div>
+		<app-jogador></app-jogador>
+		<app-desenvolvedor></app-desenvolvedor>
+	  </form>
+  </div>
 </section>
