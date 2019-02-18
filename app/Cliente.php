@@ -20,7 +20,7 @@ class Cliente extends Model
       }
     public function jogos()
       {
-        return $this->belongsToMany('App\Jogos')->withTimestamps();
+        return $this->belongsToMany('App\Jogos');
       }
 
 

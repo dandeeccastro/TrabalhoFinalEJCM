@@ -127,7 +127,8 @@ class ClienteController extends Controller
     public function compra(Request $request)
     {
       $clientes = Cliente::findOrFail($request->cliente_id);
-      $clientes->jogos()->attach($request->jogo_id);
+      $clientes->jogos()->attach($request->jogos_id);
+      //dd($clientes);
       $clientes-> save();
       return response()->json(['message' => 'Operação realizada com sucesso.']);
     }
