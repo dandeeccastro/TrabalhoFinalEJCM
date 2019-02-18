@@ -13,14 +13,14 @@ class Cliente extends Model
     protected $dates = ['deteled_at'];
 
 
-    //protected $fillable = [];
+    protected $fillable = [];
     public function user()
       {
         return $this->hasOne('App\User');
       }
     public function jogos()
       {
-        return $this->belongsToMany('App\Jogos','clienteJogos', 'jogos_id','cliente_id')->as('clienteJogos')->withTimestamps();
+        return $this->belongsToMany('App\Jogos')->withTimestamps();
       }
 
 

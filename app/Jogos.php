@@ -15,7 +15,7 @@ class Jogos extends Model
 
   public function clientes()
     {
-      return $this->belongsToMany('App\Cliente','clienteJogos','cliente_id','jogos_id')->as('clienteJogos')->withTimestamps();
+      return $this->belongsToMany('App\Cliente')->withTimestamps();
     }
   public function vendedor()
   {
