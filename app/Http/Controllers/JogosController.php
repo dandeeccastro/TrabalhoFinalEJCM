@@ -8,6 +8,8 @@ use App\Jogos;
 use Auth;
 use App\User;
 use App\Vendedor;
+use Illuminate\Support\Facades\Storage;
+use Validator;
 
 
 class JogosController extends Controller
@@ -33,8 +35,44 @@ class JogosController extends Controller
     {
       $jogos = new Jogos;
       $jogos -> insereJogo($request);
+
+
+       //Pega o arquivo da request
+
+        $file = $request->file('photo');
+
+        //Cria um nome unico para a foto
+
+        $filename = 'foto.'.$file->getClienteOriginalExtension();
+
+        //Cria a pasta de fotos caso não exista
+
+        if (!Storage::exists('localPhotos/'))
+          Storage::makeDirectory('localPhotos/',0775,true);
+
+        //Valida a foto
+        $validator = Validator::make($request->all(), [
+            'photo' =>'required|file|image|mimes:jpeg,png,gif,webp|max:2048'
+        ]);
+        //Caso a requisição venha fora do esperado retorna um erro Bad Request 400
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 400);
+        }
+        
+        
+        $path = $file->storeAs('JogosPhotos', $filename);
+
+        $jogos->photo = $path;
+        
+        $jogos->save();
+
       return response()->json([$jogos]);
     }
+
+    public function downloadPhoto($id){
+      $jogos = Jogos::findOrFail($id);
+      return response()->download(storage_path('app/'.$jogos->photo));
+  }
 
     /**
      * Display the specified resource.
