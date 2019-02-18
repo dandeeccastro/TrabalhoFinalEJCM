@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { MaterializeModule } from 'angular2-materialize';
+import { FormsModule } from '@angular/forms';
 
 /* COMPONENTS */
 import { NavbarComponent } from './navbar/navbar.component';
@@ -40,13 +41,14 @@ import { PesquisaService } from './service/pesquisa.service';
 	UsuarioComponent,
 	LoginComponent,
 	JogosComponent,
-	PesquisaComponent
+	PesquisaComponent,
   ],
   imports: [
     BrowserModule,
 	AppRoutingModule,
 	MaterializeModule,
-	HttpClientModule
+	HttpClientModule,
+	FormsModule
   ],
   providers: [
 		HttpClientModule,

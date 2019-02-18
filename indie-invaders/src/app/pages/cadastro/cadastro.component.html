@@ -11,18 +11,20 @@
 			    <div class="switch">
 			      <label>
 			        Jogador
-			        <input type="checkbox">
+			        <input type="checkbox" name="usertype" [(ngModel)]="switch">
 			        <span class="lever"></span>
 			        Desenvolvedor
 			      </label>
 			    </div>
 			  </div>
 			  <div class="col l4 center-align">
-			    <img class="escolha" src="../../../assets/img/					space-invaders.svg">
+			    <img class="escolha" src="../../../assets/img/space-invaders.svg">s
 			  </div>
 			</div>
-			<app-jogador></app-jogador>
-			<app-desenvolvedor></app-desenvolvedor>
+			<div class="selector">
+				<app-jogador *ngIf="switch"></app-jogador>
+				<app-desenvolvedor *ngIf="!switch"></app-desenvolvedor>
+			</div>
 	    </form>
     </div>
 </section>

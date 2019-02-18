@@ -1,7 +1,4 @@
-h1, h2, h3 {
-    font-family: 'VT323', sans-serif;
-}
-p {
+h1, h2, h3, p {
     font-family: 'Dosis', sans-serif;
 }
 li h3 {
@@ -11,13 +8,14 @@ section {
     margin: 0.5em 0;
 }
 .first-section {
-    height: 75vh;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url(../../../assets/gamersbg.jpg);
     background-color: rgba(0, 0, 0, 0.5);
     background-blend-mode: multiply;
+    background-repeat: no-repeat;
 }
 .text-box {
     height: 100%;
