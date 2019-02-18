@@ -10,6 +10,7 @@ use App\Jogos;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\ClienteResource;
 use App\Notifications\RegisterNotification;
+use App\Notifications\CompraNotification;
 
 class ClienteController extends Controller
 {
@@ -127,9 +128,12 @@ class ClienteController extends Controller
     public function compra(Request $request)
     {
       $clientes = Cliente::findOrFail($request->cliente_id);
+      $newUser= User::find($clientes->users_id);
+      $newUser->notify(new CompraNotification($newUser));
       $clientes->jogos()->attach($request->jogos_id);
       //dd($clientes);
       $clientes-> save();
+
       return response()->json(['message' => 'Operação realizada com sucesso.']);
     }
     public function numeroJogos($id)
