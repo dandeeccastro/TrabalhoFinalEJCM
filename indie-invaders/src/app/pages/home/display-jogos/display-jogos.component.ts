@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-display-jogos',
@@ -7,13 +8,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DisplayJogosComponent implements OnInit {
 
-	@Input() titulo
+	@Input() titulo;
+	@Input() preco;
 
-	constructor() { 
+	constructor(private router: Router) { 
 	}
 
-  	ngOnInit() { 
- 		console.log(this.titulo);
-  	}
+	
+	ngOnInit() {  
+		console.log(this.titulo);
+	}
+		
+	checkGame() {
+		this.router.navigate(['jogos']);
+	}
 
 }
