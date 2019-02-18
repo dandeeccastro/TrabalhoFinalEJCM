@@ -45,8 +45,12 @@ export class UsuarioComponent implements OnInit {
         if (firstVerifier == cpfArray[9] && secondVerifier == cpfArray[10]){
           this.cpfIsValid = true;
         }
+      } else {
+        this.cpfIsValid = false;
       }
       
+    } else {
+      this.cpfIsValid = false;
     }
     console.log(this.cpfIsValid);
     return this.cpfIsValid;
