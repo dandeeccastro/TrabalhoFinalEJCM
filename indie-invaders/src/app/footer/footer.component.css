@@ -2,10 +2,7 @@ ul {
 	display: flex;
 }
 ul li {
-	margin:0 100%;
-}
-.icone-footer, .rebel {
-	width: 20px;
+	margin:0 5%;
 }
 footer {
 	margin-left: -1px;
@@ -14,10 +11,12 @@ footer {
 	margin-top: 10vh;
 	background-color: #0B181C;
 	border: 1px solid #1E83A2;
-	box-sizing: border-box;
-	/* comentei, pois se ativar cria uma margem na parte de baixo do footer */
-	/* height: 35vh; */
 }
 footer .row {
 	max-height: 30vh;
+}
+
+.icone-footer{
+	width: 3vw;
+	min-width: 40px;
 }
