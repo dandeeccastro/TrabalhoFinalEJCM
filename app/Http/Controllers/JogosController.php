@@ -81,4 +81,10 @@ class JogosController extends Controller
       $categoria = Categoria::findOrFail($id);
       return response()->json([$categoria->jogos]);
   }
+  // public function classificacao()
+  // {
+  //   $media = App\Jogos::avg('classificacaoUsuarios');
+  //   return response()->json([$media]);
+  //
+  // }
 }

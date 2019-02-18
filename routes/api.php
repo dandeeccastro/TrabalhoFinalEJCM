@@ -37,3 +37,7 @@ Route::get('getJogos/{id}', 'VendedorController@getJogos');
 Route::get('getCategoria/{id}', 'JogosController@getCategoria');
 
 Route::post('compra', 'ClienteController@compra');
+
+Route::get('classificacao', 'JogosController@classificacao');
+
+Route::get('numeroJogos/{id}', 'ClienteController@numeroJogos');

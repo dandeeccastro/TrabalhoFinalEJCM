@@ -132,4 +132,10 @@ class ClienteController extends Controller
       $clientes-> save();
       return response()->json(['message' => 'Operação realizada com sucesso.']);
     }
+    public function numeroJogos($id)
+    {
+      $clientes= Cliente::findOrfail($id);
+      //$clientes->jogos()->get();
+      return response()->json([$clientes->jogos()->get()]);
+    }
 }
