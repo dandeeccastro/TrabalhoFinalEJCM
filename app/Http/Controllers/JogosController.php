@@ -19,7 +19,7 @@ class JogosController extends Controller
     public function index()
     {
         $jogos = Jogos::all();
-        return new JogoResource($jogos);
+        return response()->json($jogos);
     }
 
     /**
@@ -87,4 +87,13 @@ class JogosController extends Controller
   //   return response()->json([$media]);
   //
   // }
+  public function pesquisar(Request $request)
+  {
+    $lista = Jogos::where('nome', 'like', '%' .$request->nome. '%')
+                  ->orderBy('nome', 'ASC')->first();
+                  dd($lista);
+                  //->get();
+    return response()->json([$lista]);
+
+  }
 }

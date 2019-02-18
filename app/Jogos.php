@@ -58,4 +58,5 @@ class Jogos extends Model
     Jogos::destroy($id);
   }
 
+
 }

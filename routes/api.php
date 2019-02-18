@@ -25,7 +25,7 @@ Route::apiResource('categoria', 'CategoriaController');
 
 
 Route::post('login', 'API\PassportController@login');
-Route::post('register', 'API\PassportController@register');
+//Route::post('register', 'API\PassportController@register');
 
 Route::group(['middleware' => 'auth:api'], function() {
   Route::get('logout', 'API\PassportController@logout');
@@ -38,6 +38,9 @@ Route::get('getCategoria/{id}', 'JogosController@getCategoria');
 
 Route::post('compra', 'ClienteController@compra');
 
-Route::get('classificacao', 'JogosController@classificacao');
+//Route::get('classificacao', 'JogosController@classificacao');
 
 Route::get('numeroJogos/{id}', 'ClienteController@numeroJogos');
+
+
+Route::get('pesquisar', 'JogosController@pesquisar');
