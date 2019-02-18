@@ -1,6 +1,6 @@
 <section class="first-section">
 	<div class="row container">
-		<form>
+		<form #cadastro="ngForm" (ngSubmit)="onSubmit(cadastro)">
 			<app-usuario></app-usuario>
 			<!-- Escolha do usuario entre jogador e desenvolvedor -->
 			<div class="tipo row valign-wrapper">

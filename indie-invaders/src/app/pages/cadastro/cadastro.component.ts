@@ -15,4 +15,7 @@ export class CadastroComponent implements OnInit {
   ngOnInit() {
     this.scrolltop.setScrollTop();
   }
+  OnSubmit(cadastro){
+    console.log(cadastro);
+  }
 }
