@@ -89,10 +89,9 @@ class JogosController extends Controller
   // }
   public function pesquisar(Request $request)
   {
-    $lista = Jogos::where('nome', 'like', '%' .$request->nome. '%')
-                  ->orderBy('nome', 'ASC')->first();
-                  dd($lista);
-                  //->get();
+    $lista = Jogos::where('nome',$request->nome)
+                  ->get();
+                  //dd($lista);
     return response()->json([$lista]);
 
   }

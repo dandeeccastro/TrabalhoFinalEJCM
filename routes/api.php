@@ -43,4 +43,4 @@ Route::post('compra', 'ClienteController@compra');
 Route::get('numeroJogos/{id}', 'ClienteController@numeroJogos');
 
 
-Route::get('pesquisar', 'JogosController@pesquisar');
+Route::post('pesquisar', 'JogosController@pesquisar');
