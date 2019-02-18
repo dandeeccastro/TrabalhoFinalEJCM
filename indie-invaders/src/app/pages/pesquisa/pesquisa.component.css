@@ -16,14 +16,13 @@
     border: 2px solid rgb(34, 50, 73);
     border-radius: .25em;
 }
-aside {
-    width: 40vw;
-}
+
 .game-list {
     background-color: rgb(34, 50, 73);
     border-radius: .25em;
     padding: .25em;
 }
+
 .game {
     font-family: 'Dosis', sans-serif;
     font-size: 1.5em;
@@ -31,6 +30,20 @@ aside {
     background-color: rgb(50, 72, 102);
     border-radius: .125em;
 }
-.first-section { 
+
+.first-section {
     margin-top: 1%;
+}
+
+.btn{
+  background-color: #335964;
+  color: #DDDDDD;
+}
+
+aside {
+    width: 40vw;
+}
+
+li{
+  color:#DDDDDD;
 }

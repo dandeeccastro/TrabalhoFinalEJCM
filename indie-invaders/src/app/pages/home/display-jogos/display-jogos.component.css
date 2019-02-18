@@ -22,3 +22,12 @@ h2 {
 	justify-content: center;
 	margin: 7.5em 0;
 }
+
+.slider-image{
+	background-size: auto 100% !important;
+	background-repeat: no-repeat;
+}
+
+.slides{
+	background-color: transparent;
+}
