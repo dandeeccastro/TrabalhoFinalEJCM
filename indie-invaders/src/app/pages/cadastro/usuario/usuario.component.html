@@ -27,24 +27,26 @@
       </div>
     </div>
 </fieldset>
-<fieldset><label>Informações pessoais:</label>
-	<div  class="row">
-	  <div class="input-field col l6 s12">
-	    <input  id="nome" type="text" class="validate">
-	    <label for="nome">Nome</label>
-	  </div>
-	   <div class="input-field col l6 s12">
-	    <input  id="cpf" type="text" class="validate">
-	    <label for="cpf">CPF</label>
-	  </div>
-	</div>
-	<div class="row">
-	  <div class="input-field col l6 s12">
-	    <input id="telefone" type="text" class="validate">
-	    <label for="telefone">Telefone (opcional)</label>
-	  </div>
-	  <div class="input-field col l6 s12">
-	    <input id="nascimento" type="date" class="validate">
-	  </div>
-	</div>
-</fieldset>
+<form  #form="ngForm">
+  <fieldset><label>Informações pessoais:</label>
+    <div  class="row">
+      <div class="input-field col l6 s12">
+        <input  id="nome" type="text" class="validate">
+        <label for="nome">Nome</label>
+      </div>
+      <div class="input-field col l6 s12">
+        <input id="cpf" type="number" class="validate" name="cpf" #cpf="ngModel" ngModel (blur)="validateCPF(cpf)">
+        <label for="cpf">CPF</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col l6 s12">
+        <input id="telefone" type="text" class="validate">
+        <label for="telefone">Telefone (opcional)</label>
+      </div>
+      <div class="input-field col l6 s12">
+        <input id="nascimento" type="date" class="validate">
+      </div>
+    </div>
+  </fieldset>
+</form>
