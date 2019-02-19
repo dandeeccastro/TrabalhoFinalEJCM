@@ -1,0 +1,62 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Jogos extends Model
+{
+  use SoftDeletes;
+
+  protected $dates = ['deteled_at'];
+
+  public function clientes()
+    {
+      return $this->belongsToMany('App\Cliente');
+    }
+  public function vendedor()
+  {
+    return $this->belongsTo('App\Vendedor');
+  }
+
+  public function insereJogo($request){
+    $this ->nome = $request ->nome;
+    $this ->preco = $request ->preco;
+    $this ->anoDoLancamento = $request ->anoDoLancamento;
+    $this ->mesDeLancamento = $request ->mesDeLancamento;
+    $this ->descricao = $request ->descricao;
+    $this ->foto = $request ->foto;
+    $this ->vendedor_id = $request ->vendedor_id;
+    $this ->categoria_id = $request ->categoria_id;
+
+    $this -> save();
+  }
+  public function updateJogos($request){
+    //alteras os dados quando aplicável
+    if($request->nome) {
+      $this->nome = $request->nome;
+    }
+    if($request->anoDoLancamento) {
+      $this->anoDoLancamento = $request->anoDoLancamento;
+    }
+    if($request->mesDeLancamento) {
+      $this->mesDeLancamento = $request->mesDeLancamento;
+    }
+    if($request->preco) {
+      $this->preco = $request->preco;
+    }
+    if($request->descricao) {
+      $this->descricao = $request->descricao;
+    }
+    if($request->foto) {
+      $this->foto = $request->foto;
+    }
+
+    $this->save();
+  }
+  public function deleteJogos($id){
+    Jogos::destroy($id);
+  }
+
+}
