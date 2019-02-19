@@ -1,9 +1,12 @@
 <section class="first-section row container">
-  <div class="input-field">
-    <input type="search" name="query">
-    <i class="material-icons">search</i>
-    <label for="query">Pesquisar jogo</label>
-  </div>
+  <form #form="ngForm" (ngSubmit)='searchGame(pesquisa)'>
+    <div class="input-field">
+      <input type="search" name="query" ngModel #pesquisa="ngModel">
+      <i class="material-icons">search</i>
+      <label for="query">Pesquisar jogo</label>
+    </div>
+    <button type="submit">jdasbiuhsauidhasiu</button>
+  </form>
 </section>
 <div class="row">
   <aside class="col l4 m4 categories">

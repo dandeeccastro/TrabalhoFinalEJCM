@@ -34,10 +34,10 @@ Route::group(['middleware' => 'auth:api'], function() {
   Route::get('getJogos/{id}', 'VendedorController@getJogos');
   Route::get('downloadFoto/{id}','JogosController@downloadFoto');
   Route::get('jogosDoAno','JogosController@jogosDoAno');
-  Route::get('getCategoria/{id}', 'JogosController@getCategoria');
+  
   Route::post('compra', 'ClienteController@compra');
   //Route::get('classificacao', 'JogosController@classificacao');
-  Route::post('pesquisar', 'JogosController@pesquisar');
+  
 
   //Rotas em relação a middleware do Vendedor//
 
@@ -55,4 +55,5 @@ Route::group(['middleware' => 'auth:api'], function() {
 
   });
 });
-
+Route::post('pesquisar', 'JogosController@pesquisar');
+Route::get('getCategoria/{id}', 'JogosController@getCategoria');

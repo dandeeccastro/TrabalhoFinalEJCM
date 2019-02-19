@@ -1,57 +1,56 @@
-<fieldset class="topo"><label>Criando sua conta:</label>
-	<!-- Começa o cadastro de usuário -->
-	<div class="row">
-      <div class="input-field col l12 m12 s12">
-        <input  id="usuario" type="text" class="validate">
-        <label for="usuario">Nome de Usuário</label>
-      </div>
-    </div>
+
+  <fieldset class="topo"><label>Criando sua conta:</label>
+    <!-- Começa o cadastro de usuário -->
     <div class="row">
-      <div class="input-field col l6 m12 s12">
-        <input id="senha" type="password" class="validate">
-        <label for="senha">Senha</label>
+        <div class="input-field col l12 m12 s12">
+          <input  id="usuario" type="text" name="usuario" class="validate" ngModel #usuario="ngModel">
+          <label for="usuario">Nome de Usuário</label>
+        </div>
       </div>
-      <div class="input-field col l6 m12 s12">
-        <input id="senha1" type="password" class="validate">
-        <label data-error="Senhas não correspondem" data-success="Senhas iguais" for="senha1">Confirmar senha</label>
+      <div class="row">
+        <div class="input-field col l6 m12 s12">
+          <input id="senha" type="password" name="senha" class="validate" ngModel #senha="ngModel">
+          <label for="senha">Senha</label>
+        </div>
+        <div class="input-field col l6 m12 s12">
+          <input id="senha1" type="password" name="senha1" class="validate" ngModel #senha1="ngModel">
+          <label data-error="Senhas não correspondem" data-success="Senhas iguais" for="senha1">Confirmar senha</label>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col l6 m12 s12">
-        <input id="email" type="email" class="validate">
-        <label for="email">e-mail</label>
+      <div class="row">
+        <div class="input-field col l6 m12 s12">
+          <input id="email" type="email" class="validate" name="email" ngModel #email="ngModel">
+          <label for="email">e-mail</label>
+        </div>
+        <div class="input-field col l6 m12 s12">
+          <input id="email1" type="email" class="validate" name="email1" ngModel #email1="ngModel">
+          <label data-error="e-mail não corresponde" data-success="-email igual" for="email">Confirmar e-mail</label>
+        </div>
       </div>
-      <div class="input-field col l6 m12 s12">
-        <input id="email1" type="email" class="validate">
-        <label data-error="e-mail não corresponde" data-success="-email igual" for="email">Confirmar e-mail</label>
-      </div>
-    </div>
-</fieldset>
-<form  #form="ngForm">
-  <fieldset><label>Informações pessoais:</label>
-    <div  class="row">
-      <div class="input-field col l6 s12">
-        <input  id="nome" type="text" class="validate">
-        <label for="nome">Nome</label>
-      </div>
-      <div class="input-field col l6 s12">
-        <input id="cpf" type="number" name="cpf" #cpf="ngModel" 
-          [class.valid]="cpfIsValid" 
-          [class.invalid]="!cpfIsValid && cpf.touched" 
-          ngModel (blur)="validateCPF(cpf)">
-        <label for="cpf">CPF</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col l6 s12">
-        <input id="telefone" type="text" class="validate">
-        <label for="telefone">Telefone (opcional)</label>
-      </div>
-      <div class="input-field col l6 s12">
-        <input id="nascimento" type="text" [(ngModel)]="datepicker" materialize="pickadate" [materializeParams]="[{format:'dd/mm/yyyy', selectYears: 15}]">
-        <label for="nascimento"> Data de Nascimento</label>
-      </div>
-    </div>
   </fieldset>
-</form>
-<!--  [(ngModel)]="datepicker" [materializeParams]="[{format:'dd/mm/yyyy'}]-->
+    <fieldset><label>Informações pessoais:</label>
+      <div  class="row">
+        <div class="input-field col l6 s12">
+          <input  id="nome" type="text" class="validate" name="nome" ngModel #nome="ngModel">
+          <label for="nome">Nome</label>
+        </div>
+        <div class="input-field col l6 s12">
+          <input id="cpf" type="number" name="cpf" #cpf="ngModel" 
+            [class.valid]="cpfIsValid" 
+            [class.invalid]="!cpfIsValid && cpf.touched" 
+            ngModel (blur)="validateCPF(cpf)" #cpf="ngModel">
+          <label for="cpf">CPF</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col l6 s12">
+          <input id="telefone" type="text" class="validate" name="telefone" ngModel #telefone="ngModel">
+          <label for="telefone">Telefone (opcional)</label>
+        </div>
+        <div class="input-field col l6 s12">
+          <input id="nascimento" type="text" [(ngModel)]="datepicker" name="nascimento" materialize="pickadate" 
+          [materializeParams]="[{format:'dd/mm/yyyy', selectYears: 15}]" #dataNascimento="ngModel">
+          <label for="nascimento"> Data de Nascimento</label>
+        </div>
+      </div>
+    </fieldset>

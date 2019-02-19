@@ -48,20 +48,20 @@ class VendedorController extends Controller
   		}
 
   		$newUser = new User;
-  		$newUser->name = $request ->name;
+  		$newUser->name = $request->name;
   		$newUser->email = $request->email;
-  		$newUser-> password = bcrypt($request -> password);
+  		$newUser->password = bcrypt($request->password);
       	$newUser->cpf = $request->cpf;
       	$newUser->username= $request->username;
       	$newUser->dataDeNascimento = $request->dataDeNascimento;
       	$newUser->telefone = $request->telefone;
-  		$success['token'] = $newUser-> createToken('MyApp')->accessToken;
-  		$success['username'] = $newUser-> username;
-      $success['token'] = $newUser-> createToken('MyApp')->accessToken;
-  		$success['username'] = $newUser-> username;
+  		$success['token'] = $newUser->createToken('MyApp')->accessToken;
+  		$success['username'] = $newUser->username;
+      $success['token'] = $newUser->createToken('MyApp')->accessToken;
+  		$success['username'] = $newUser->username;
       $newUser->notify(new RegisterNotification($newUser));
 
-      $newUser-> save();
+      $newUser->save();
 
 
       $vendedor = new Vendedor;

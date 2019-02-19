@@ -8,6 +8,12 @@ import { Observable } from 'rxjs';
 })
 export class PesquisaService {
 
+  private apiURL: string = "http://localhost:8000/api/";
+
   constructor(public http: HttpClient) { }
+
+  public pesquisarJogo(nome: string) {
+    return this.http.post(this.apiURL + "pesquisar", nome).pipe(map(res => res));
+  }
 
 }
