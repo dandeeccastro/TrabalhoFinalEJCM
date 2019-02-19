@@ -1,7 +1,62 @@
 <section class="first-section">
 	<div class="row container">
 		<form #cadastro="ngForm" (ngSubmit)="onSubmit(cadastro)">
-			<app-usuario></app-usuario>
+			<!--Começando o form de usuário-->
+		  <fieldset class="topo usuario"><label>Criando sua conta:</label>
+		    <div class="row">
+		        <div class="input-field col l12 m12 s12">
+		          <input  id="usuario" type="text" name="usuario" class="validate" ngModel #usuario="ngModel">
+		          <label for="usuario">Nome de Usuário</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col l6 m12 s12">
+		          <input id="senha" type="password" name="senha" class="validate" ngModel #senha="ngModel">
+		          <label for="senha">Senha</label>
+		        </div>
+		        <div class="input-field col l6 m12 s12">
+		          <input id="senha1" type="password" name="senha1" class="validate" ngModel #senha1="ngModel">
+		          <label data-error="Senhas não correspondem" data-success="Senhas iguais" for="senha1">Confirmar senha</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col l6 m12 s12">
+		          <input id="email" type="email" class="validate" name="email" ngModel #email="ngModel">
+		          <label for="email">e-mail</label>
+		        </div>
+		        <div class="input-field col l6 m12 s12">
+		          <input id="email1" type="email" class="validate" name="email1" ngModel #email1="ngModel">
+		          <label data-error="e-mail não corresponde" data-success="-email igual" for="email">Confirmar e-mail</label>
+		        </div>
+		      </div>
+		  </fieldset>
+		    <fieldset class="usuario"><label>Informações pessoais:</label>
+		      <div  class="row">
+		        <div class="input-field col l6 s12">
+		          <input  id="nome" type="text" class="validate" name="nome" ngModel #nome="ngModel">
+		          <label for="nome">Nome</label>
+		        </div>
+		        <div class="input-field col l6 s12">
+		          <input id="cpf" type="number" name="cpf" #cpf="ngModel" 
+		            [class.valid]="cpfIsValid" 
+		            [class.invalid]="!cpfIsValid && cpf.touched" 
+		            ngModel (blur)="validateCPF(cpf)" #cpf="ngModel">
+		          <label for="cpf">CPF</label>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col l6 s12">
+		          <input id="telefone" type="text" class="validate" name="telefone" ngModel #telefone="ngModel">
+		          <label for="telefone">Telefone (opcional)</label>
+		        </div>
+		        <div class="input-field col l6 s12">
+		          <input id="nascimento" type="text" [(ngModel)]="datepicker" name="nascimento" materialize="pickadate" 
+		          [materializeParams]="[{format:'dd/mm/yyyy', selectYears: 15}]" #dataNascimento="ngModel">
+		          <label for="nascimento"> Data de Nascimento</label>
+		        </div>
+		      </div>
+		    </fieldset>
+			<!--Terminando o form de usuário-->
 			<!-- Escolha do usuario entre jogador e desenvolvedor -->
 			<div class="tipo row valign-wrapper">
 			  <div class="col l4 m3 s2 center-align">
@@ -18,19 +73,71 @@
 			    </div>
 			  </div>
 			  <div class="col l4 m3 s2 center-align">
-			    <img class="escolha" src="../../../assets/img/space-invaders.svg">s
+			    <img class="escolha" src="../../../assets/img/space-invaders.svg">
 			  </div>
 			</div>
 			<div class="selector">
-				<app-jogador *ngIf="!switch"></app-jogador>
-				<app-desenvolvedor *ngIf="switch"></app-desenvolvedor>
+				<!-- Começa form de jogador -->
+				<div  *ngIf="!switch">
+				<fieldset class="jogadorcampo"><label>Informações para compra:</label>
+					<div class="row">
+						<div class="input-field col l6 s12">
+							<input id="cartao" type="text" class="validate" name="cartao" ngModel #cartao="ngModel">
+							<label for="cartao">n° do cartão</label>
+						</div>
+						<div select class="input-field col l6 s12">
+							<input id="nometitular" type="text" class="validate" name="nometitular" ngModel #nometitular="ngModel">
+							<label for="nometitular">Nome no cartão</label>
+						</div>
+					</div>
+					<div class="row">
+						<div select class="input-field col l6 s12">
+					  		<input id="bandeiraCartao" type="text" class="validate" name="bandeiraCartao" ngModel #bandeiraCartao="ngModel">
+					  		<label for="bandeiraCartao">Bandeira do cartão</label>
+						</div>
+						<div select class="input-field col l6 s12">
+							<input id="seguranca" type="text" class="validate" name="	seguranca" ngModel #seguranca="ngModel">
+							<label for="seguranca">n° de segurança</label>
+						</div>
+					</div>
+				</fieldset>
+				</div>
+				<!-- Termina form de jogador -->
+				<!-- <app-jogador *ngIf="!switch"></app-jogador> -->
+				<!-- começa o form de desenvolvedor -->
+				<div *ngIf="switch">
+				<fieldset class="desenvolvedorcampo"><label>Informações para Depósito:</label>
+					<div class="row">
+						<div class="input-field col l6 s12">
+							<input id="conta" type="text" class="validate" name="conta" ngModel #conta="ngModel">
+							<label for="conta">Conta Corrente</label>
+						</div>
+						<div select class="input-field col l6 s12">
+							<input id="agencia" type="text" class="validate" name="agencia" ngModel #agencia="ngModel">
+							<label for="agencia">Agência</label>
+						</div>
+					</div>
+					<div class="row">
+						<div select class="input-field col l6 s12">
+							<input id="operacao" type="text" class="validate" name="operacao" ngModel #operacao="ngModel">
+							<label for="operacao">Operação</label>
+						</div>
+						<div select class="input-field col l6 s12">
+							<input id="banco" type="text" class="validate" name="banco" ngModel #banco="ngModel">
+							<label for="banco">Banco</label>
+						</div>
+					</div>
+				</fieldset>
+				</div>
+				<!-- termina o form de desenvolvedor -->
+				<!-- <app-desenvolvedor *ngIf="switch"></app-desenvolvedor> -->
 			</div>
 			<div class="row">
 				<div class="entrar col offset-l8 l4 m12 s12">
-	        <button class="btn waves-effect waves-light" type="submit" name="login">Cadastrar
-	          <i class="material-icons right">send</i>
-	        </button>
-	      </div>
+			        <button class="btn waves-effect waves-light" type="submit" name="login">Cadastrar
+			          <i class="material-icons right">send</i>
+	        		</button>
+	     		</div>
 			</div>
 	    </form>
     </div>

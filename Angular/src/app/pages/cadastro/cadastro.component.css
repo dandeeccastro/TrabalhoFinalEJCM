@@ -6,6 +6,10 @@
 	margin-top: 5vh
 }
 
+.topo{
+	margin-top: -10vh;
+}
+
 .switch label input[type=checkbox]:checked+.lever {
   background-color: #21FF21;
 }
@@ -26,6 +30,25 @@
   margin-top: 5vh ;
 	background-color: #335964;
 	color: #DDDDDD;
+}
+
+.desenvolvedorcampo{
+	margin-top: 10vh;
+	border: solid 1px #21FF21;
+}
+
+.jogadorcampo{
+	margin-top: 10vh;
+	border: solid 1px #FA0FEC;
+}
+
+.usuario{
+	margin-bottom: 10vh;
+	border: solid 1px #335964;
+}
+
+input {
+	color: #dddddd;
 }
 
 
