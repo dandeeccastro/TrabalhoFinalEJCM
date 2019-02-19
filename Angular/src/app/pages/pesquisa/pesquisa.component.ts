@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PesquisaService } from '../../service/pesquisa.service';
 import { Router } from '@angular/router'; 
 import { ScrolltopService } from '../../service/scrolltop.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-pesquisa',
@@ -25,6 +26,12 @@ export class PesquisaComponent implements OnInit {
 
   checkGame() {
     this.router.navigate(['jogos']);
+  }
+
+  searchGame(nome){
+    console.log("estou sendo chamado");
+    console.log(nome.value);
+    console.log(this.pesquisaService.pesquisarJogo(nome.value));
   }
 
 }

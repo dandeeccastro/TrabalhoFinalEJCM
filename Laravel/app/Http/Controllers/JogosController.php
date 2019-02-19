@@ -11,7 +11,8 @@ use App\Vendedor;
 use Illuminate\Support\Facades\Storage;
 use Validator;
 use Carbon\Carbon;
-
+use App\Categoria;
+use App\Http\Resources\JogoResource;
 
 class JogosController extends Controller
 {
@@ -23,7 +24,7 @@ class JogosController extends Controller
     public function index()
     {
         $jogos = Jogos::all();
-        return response()->json([$jogos]);
+        return response()->json($jogos);
     }
 
     /**
@@ -67,7 +68,8 @@ class JogosController extends Controller
 
         $jogos->save();
 
-      return response()->json([$jogos]);
+   //   return response()->json([$jogos]);
+      return new JogoResource($jogos);
     }
 
     public function downloadFoto($id){
@@ -85,7 +87,7 @@ class JogosController extends Controller
     public function show($id)
     {
         $jogos = Jogos::find($id);
-        return response()->json([$jogos]);
+        return new JogoResource($jogos);
     }
 
     /**
@@ -101,7 +103,7 @@ class JogosController extends Controller
         $jogos = Jogos::find($id);
         $jogos -> updateJogos($request);
 
-        return response()->json([$jogos]);
+        return new JogoResource($jogos);
     }
 
     /**
@@ -135,4 +137,24 @@ class JogosController extends Controller
 
     }
 
+    //funcao que printa os jogos de uma categoria
+    public function getCategoria($id)
+  {
+      $categoria = Categoria::findOrFail($id);
+      return response()->json([$categoria->jogos]);
+  }
+  // public function classificacao()
+  // {
+  //   $media = App\Jogos::avg('classificacaoUsuarios');
+  //   return response()->json([$media]);
+  //
+  // }
+  public function pesquisar(Request $request)
+  {
+    $lista = Jogos::where('nome',$request->nome)
+                  ->get();
+                  //dd($lista);
+    return response()->json([$lista]);
+
+  }
 }

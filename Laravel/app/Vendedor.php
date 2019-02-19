@@ -23,12 +23,12 @@ class Vendedor extends Model
   }
   public function insereVendedores($request){
     //$this ->user_id = $request->user_id;
-    $this ->ContaCorrente = $request->ContaCorrente;
-    $this ->agencia = $request->agencia;
-    $this ->banco = $request->banco;
-    $this ->operacao = $request->operacao;
+    $this->ContaCorrente = $request->ContaCorrente;
+    $this->agencia = $request->agencia;
+    $this->banco = $request->banco;
+    $this->operacao = $request->operacao;
 
-    $this -> save();
+    $this-> save();
   }
   public function updateVendedores($request){
     //alteras os dados quando aplicável
