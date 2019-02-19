@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { FormsModule } from '@angular/forms';
+
 import { MaterializeModule } from 'angular2-materialize';
 import { FormsModule } from '@angular/forms';
 
@@ -20,6 +22,7 @@ import { DesenvolvedorComponent } from './pages/cadastro/desenvolvedor/desenvolv
 import { UsuarioComponent } from './pages/cadastro/usuario/usuario.component';
 import { LoginComponent } from './pages/login/login.component';
 import { JogosComponent } from './pages/jogos/jogos.component';
+import { CadastrojogoComponent } from './pages/cadastrojogo/cadastrojogo.component';
 import { PesquisaComponent } from './pages/pesquisa/pesquisa.component';
 
 /* SERVICES E AFINS */
@@ -44,7 +47,7 @@ import { PesquisaService } from './service/pesquisa.service';
 	PesquisaComponent,
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
 	AppRoutingModule,
 	MaterializeModule,
 	HttpClientModule,

@@ -27,3 +27,8 @@ h2 {
 .grade {
     color: rgb(63, 182, 16);
 }
+
+.doom{
+  width: 30vw;
+  min-width: 300px;
+}

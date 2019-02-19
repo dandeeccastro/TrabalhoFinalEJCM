@@ -9,6 +9,8 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { JogosComponent } from './pages/jogos/jogos.component';
+import { CadastrojogoComponent } from './pages/cadastrojogo/cadastrojogo.component';
+
 import { PesquisaComponent } from './pages/pesquisa/pesquisa.component';
 const routes: Routes = [
 	{ path: 'parceria', component: ParceriaComponent },
@@ -18,6 +20,7 @@ const routes: Routes = [
 	{ path: 'cadastro', component: CadastroComponent},
 	{ path: 'login', component: LoginComponent},
 	{ path: 'jogos', component: JogosComponent},
+	{ path: 'cadastrojogo', component: CadastrojogoComponent}
 	{ path: 'pesquisa', component: PesquisaComponent }
 ];
 
