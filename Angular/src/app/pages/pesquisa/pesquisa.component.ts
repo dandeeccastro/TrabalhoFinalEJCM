@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class PesquisaComponent implements OnInit {
 
   tags: string[] = [
-    "Aventura", "RPG", "RTS", "FPS", "TPS", "Estratégia"
+    "Aventura", "Survival","Arcade","RPG","Corrida","Esportes","Estratégia","Ação"
   ]
   games: string[] =[
     "Doom", "Warcraft", "Lolzin", "Furi", "Fez", "Celeste", "Warhammer 4k"
@@ -47,4 +47,16 @@ export class PesquisaComponent implements OnInit {
     );
   }
 
+  getGamesByCategory(tag){
+    console.log(tag.value);
+/*    let index = 1;
+    for (let item in this.tags) {
+      if(item == tag.value){ index += this.tags.indexOf(item); }
+    } 
+    this.pesquisaService.getJogosByCategoria(index).subscribe(
+      (res) => {
+        console.log(res);
+      }
+    );
+    */  }
 }

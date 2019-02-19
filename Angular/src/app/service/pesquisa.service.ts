@@ -22,7 +22,7 @@ export class PesquisaService {
     return this.http.get(this.apiURL + "jogos").pipe(map(res => res));
   }
 
-  public getJogosByCategoria(id:number){
+  public getJogosByCategoria(id:number): Observable<any>{
     return this.http.get(this.apiURL + "getCategoria/" + id).pipe(map(res => res));
   }
 }
