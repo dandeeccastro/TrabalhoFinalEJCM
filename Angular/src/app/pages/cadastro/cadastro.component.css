@@ -53,7 +53,7 @@ input {
 
 
 @media only screen and (max-width: 483px) {
-    label{
+    .labelswitch{
 		font-size: 0.4em;
     }
 		.switch{
