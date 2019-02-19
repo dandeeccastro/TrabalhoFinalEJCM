@@ -4,8 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { FormsModule } from '@angular/forms';
-
 import { MaterializeModule } from 'angular2-materialize';
 import { FormsModule } from '@angular/forms';
 
@@ -45,6 +43,7 @@ import { PesquisaService } from './service/pesquisa.service';
 	LoginComponent,
 	JogosComponent,
 	PesquisaComponent,
+	CadastrojogoComponent
   ],
   imports: [
   BrowserModule,

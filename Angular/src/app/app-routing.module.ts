@@ -20,7 +20,7 @@ const routes: Routes = [
 	{ path: 'cadastro', component: CadastroComponent},
 	{ path: 'login', component: LoginComponent},
 	{ path: 'jogos', component: JogosComponent},
-	{ path: 'cadastrojogo', component: CadastrojogoComponent}
+	{ path: 'cadastrojogo', component: CadastrojogoComponent},
 	{ path: 'pesquisa', component: PesquisaComponent }
 ];
 
