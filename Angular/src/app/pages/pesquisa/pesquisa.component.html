@@ -12,9 +12,14 @@
   <aside class="col l4 m4 categories">
     <h2>Categorias</h2>
     <div class="container category-holder">
-      <ul class="category-list">
-        <li class="category" *ngFor="let tag of tags">{{ tag }}</li>
-      </ul>
+      <form #category="ngForm">
+        <ul class="category-list">
+          <li *ngFor="let tag of tags, let i = index">
+            <input id="{{tag}}" type="radio" name="category" value="{{i}}" class="category"  ngModel #id="ngModel" (click)="getGamesByCategory(id)">
+            <label for="{{tag}}">{{ tag }}</label>
+          </li>
+        </ul>
+      </form>
     </div>
   </aside>
   <div class="col l6 m6 game-list-container">
