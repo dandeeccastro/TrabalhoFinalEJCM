@@ -1,8 +1,8 @@
-<section class="row first-section">
-  <div class="col l4 offset-l1 image-container">
-    <img src="../../../assets/game-temp/doom-boxart.jpg" alt="Doom Boxart" class="valign-wrapper box-art">
+<section class="row">
+  <div class="col l4 offset-l1 m12 s12 image-container">
+    <img src="../../../assets/game-temp/doom-boxart.jpg" alt="Doom Boxart" class="valign-wrapper box-art doom">
   </div>
-  <div class="col l6 description">
+  <div class="col l6 m6 offset-s1 s10 description">
     <h2> {{ title }}</h2>
     <p class="flow-text">
       {{description}}
@@ -13,4 +13,10 @@
       <li>Morte</li>
     </ul>
   </div>
+  <div class="container grade-container">
+    <p><span class="grade">{{ grade }}</span>/5</p>
+  </div>
+</section>
+<section class="center btn-row row">
+  <button class="waves-effect waves-light btn-large"><i class="material-icons">shopping_cart</i> Adicionar ao carrinho </button>
 </section>

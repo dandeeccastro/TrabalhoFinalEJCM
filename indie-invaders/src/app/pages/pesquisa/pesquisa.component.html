@@ -1,0 +1,30 @@
+<section class="first-section row container">
+  <div class="input-field">
+    <input type="search" name="query">
+    <i class="material-icons">search</i>
+    <label for="query">Pesquisar jogo</label>
+  </div>
+</section>
+<div class="row">
+  <aside class="col l4 m4 categories">
+    <h2>Categorias</h2>
+    <div class="container category-holder">
+      <ul class="category-list">
+        <li class="category" *ngFor="let tag of tags">{{ tag }}</li>
+      </ul>
+    </div>
+  </aside>
+  <div class="col l6 m6 game-list-container">
+    <ul class="game-list">
+      <li class="game" *ngFor="let game of games">
+        {{ game }}
+        <span>
+          <button class="btn right cart"><i class="material-icons">shopping_cart</i></button>
+          <button class="btn right goToPage" (click)="checkGame()">Ver</button>
+        </span>
+      </li>
+    </ul>
+    <button class="btn back"><i class="material-icons">arrow_back</i></button>
+    <button class="btn next"><i class="material-icons">arrow_forward</i></button>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { ScrolltopService } from '../../service/scrolltop.service';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +12,9 @@ export class HomeComponent implements OnInit {
 		"Popular", "Promoções", "Para Você"	
   ];
   
-  constructor() { }
+  constructor(private scrolltop : ScrolltopService) { }
 
   ngOnInit() {
+    this.scrolltop.setScrollTop();
   }
-
 }

@@ -1,10 +1,27 @@
-<div class="scroll-container">
+<div class="row center">
 	<h2>{{ titulo }}</h2>
-	<div materialize="carousel" class="carousel center">
-			<a class="carousel-item" href="javascript:void(0);"><img src="../../../../assets/game-temp/fez.jpg"></a>
-			<a class="carousel-item" href="javascript:void(0);"><img src="../../../../assets/game-temp/supermeatboy.jpg"></a>
-			<a class="carousel-item" href="javascript:void(0);"><img src="../../../../assets/game-temp/celeste.jpg"></a>
-			<a class="carousel-item" href="javascript:void(0);"><img src="../../../../assets/game-temp/furi.jpg"></a>
-			<a class="carousel-item" href="javascript:void(0);"><img src="../../../../assets/game-temp/messenger.jpg"></a>
+	<div materialize="slider" class="col l8 offset-l2 slider">
+		<ul class="slides">
+			<li class="slider-item">
+				<img class="slider-image" src="../../../../assets/game-temp/fez.jpg">
+				<button class="preco btn waves-effect" (click)="checkGame()">{{ preco }}</button>
+			</li>
+			<li class="slider-item">
+				<img class="slider-image" src="../../../../assets/game-temp/supermeatboy.jpg">
+				<button class="preco btn waves-effect" (click)="checkGame()">{{ preco }}</button>
+			</li>
+			<li class="slider-item">
+				<img class="slider-image" src="../../../../assets/game-temp/celeste.jpg">
+				<button class="preco btn waves-effect" (click)="checkGame()">{{ preco }}</button>
+			</li>
+			<li class="slider-item">
+				<img class="slider-image" src="../../../../assets/game-temp/furi.jpg">
+				<button class="preco btn waves-effect" (click)="checkGame()">{{ preco }}</button>
+			</li>
+			<li class="slider-item">
+				<img class="slider-image" src="../../../../assets/game-temp/messenger.jpg">
+				<button class="preco btn waves-effect" (click)="checkGame()" >{{ preco }}</button>
+			</li>
+		</ul>
 	</div>
 </div>

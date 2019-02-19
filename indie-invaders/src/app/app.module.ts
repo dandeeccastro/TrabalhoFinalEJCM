@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
 import { MaterializeModule } from 'angular2-materialize';
+import { FormsModule } from '@angular/forms';
+
+/* COMPONENTS */
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ParceriaComponent } from './pages/parceria/parceria.component';
@@ -20,6 +23,11 @@ import { UsuarioComponent } from './pages/cadastro/usuario/usuario.component';
 import { LoginComponent } from './pages/login/login.component';
 import { JogosComponent } from './pages/jogos/jogos.component';
 import { CadastrojogoComponent } from './pages/cadastrojogo/cadastrojogo.component';
+import { PesquisaComponent } from './pages/pesquisa/pesquisa.component';
+
+/* SERVICES E AFINS */
+import { HttpClientModule } from '@angular/common/http';
+import { PesquisaService } from './service/pesquisa.service';
 
 @NgModule({
   declarations: [
@@ -36,15 +44,19 @@ import { CadastrojogoComponent } from './pages/cadastrojogo/cadastrojogo.compone
 	UsuarioComponent,
 	LoginComponent,
 	JogosComponent,
-	CadastrojogoComponent
+	PesquisaComponent,
   ],
   imports: [
-    BrowserModule,
-		AppRoutingModule,
-		MaterializeModule,
-    FormsModule
+  BrowserModule,
+	AppRoutingModule,
+	MaterializeModule,
+	HttpClientModule,
+	FormsModule
   ],
-  providers: [],
+  providers: [
+		HttpClientModule,
+		PesquisaComponent
+	],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

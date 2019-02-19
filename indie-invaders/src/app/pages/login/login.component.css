@@ -1,3 +1,18 @@
-h1{
-    font-family: press
+
+input {
+    color: #dddddd;
+}
+
+a{
+  color: #335964;
+}
+
+.btn{
+	background-color: #335964;
+	color: #DDDDDD;
+}
+
+fieldset{
+	margin-bottom: 10vh;
+	border: solid 1px #335964;
 }

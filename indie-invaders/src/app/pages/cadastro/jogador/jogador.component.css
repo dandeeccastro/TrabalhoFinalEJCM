@@ -1,3 +1,10 @@
 fieldset{
 	margin-top: 10vh;
+	border: solid 1px #21FF21;
+}
+input {
+	color: #dddddd;
+}
+input{
+	color: #dddddd;
 }

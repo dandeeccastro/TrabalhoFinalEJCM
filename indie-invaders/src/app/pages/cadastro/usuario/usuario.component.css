@@ -1,3 +1,13 @@
 fieldset{
-	margin-top: 10vh;
+	margin-bottom: 10vh;
+	border: solid 1px #335964;
+}
+input{
+	color: #dddddd;
+}
+.topo{
+	margin-top: -10vh;
+}
+input {
+	color: #dddddd;
 }

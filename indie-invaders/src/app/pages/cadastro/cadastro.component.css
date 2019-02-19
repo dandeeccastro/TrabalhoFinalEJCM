@@ -6,10 +6,6 @@
 	margin-top: 5vh
 }
 
-.switch{
-	padding-top: 15vh;
-}
-
 .switch label input[type=checkbox]:checked+.lever {
   background-color: #21FF21;
 }
@@ -24,4 +20,20 @@
 
 .switch label .lever:after{
 	background-color: #FA0FEC;
+}
+
+.btn{
+  margin-top: 5vh ;
+	background-color: #335964;
+	color: #DDDDDD;
+}
+
+
+@media only screen and (max-width: 483px) {
+    label{
+		font-size: 0.4em;
+    }
+		.switch{
+			width: 30vw;
+		}
 }
