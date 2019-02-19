@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-usuario',
@@ -10,6 +10,7 @@ export class UsuarioComponent implements OnInit {
   private cpfIsValid: boolean = false;
   constructor() { }
 
+  @Input() formEnded: boolean = false;
   ngOnInit() {
   }
 
@@ -54,6 +55,11 @@ export class UsuarioComponent implements OnInit {
     }
     console.log(this.cpfIsValid);
     return this.cpfIsValid;
+  }
+
+  @Output() form = new EventEmitter<any>();
+  onSubmit(ngForm){
+    this.form.emit(ngForm);
   }
 
 }

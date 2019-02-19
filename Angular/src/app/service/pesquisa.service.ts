@@ -12,8 +12,17 @@ export class PesquisaService {
 
   constructor(public http: HttpClient) { }
 
-  public pesquisarJogo(nome: string) {
-    return this.http.post(this.apiURL + "pesquisar", nome).pipe(map(res => res));
+  public pesquisarJogo(nomeDoJogo: string): Observable<any> {
+    return this.http.post(this.apiURL + "pesquisar", {
+      nome: nomeDoJogo
+    }).pipe(map(res => res));
   }
 
+  public getJogos(): Observable<any> {
+    return this.http.get(this.apiURL + "jogos").pipe(map(res => res));
+  }
+
+  public getJogosByCategoria(id:number){
+    return this.http.get(this.apiURL + "getCategoria/" + id).pipe(map(res => res));
+  }
 }

@@ -22,6 +22,7 @@ export class PesquisaComponent implements OnInit {
 
   ngOnInit() {
     this.scrolltop.setScrollTop();
+    this.getGames();
   }
 
   checkGame() {
@@ -31,7 +32,19 @@ export class PesquisaComponent implements OnInit {
   searchGame(nome){
     console.log("estou sendo chamado");
     console.log(nome.value);
-    console.log(this.pesquisaService.pesquisarJogo(nome.value));
+    this.pesquisaService.pesquisarJogo(nome.value).subscribe(
+      (res) => {
+        console.log(res);
+      }
+    );
+  }
+
+  getGames(){
+    this.pesquisaService.getJogos().subscribe(
+      (res) => {
+        console.log(res);
+      }
+    );
   }
 
 }
