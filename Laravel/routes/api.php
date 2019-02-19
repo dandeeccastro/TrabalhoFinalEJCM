@@ -23,15 +23,21 @@ Route::apiResource('jogos', 'JogosController');
 Route::apiResource('categoria', 'CategoriaController');
 
 Route::post('login', 'API\PassportController@login');
-Route::post('register', 'API\PassportController@register');
+//Route::post('register', 'API\PassportController@register');
 
 Route::group(['middleware' => 'auth:api'], function() {
   Route::get('logout', 'API\PassportController@logout');
   Route::post('get-details', 'API\PassportController@getDetails');
   Route::post('createjogos','JogosController@store');
-
+  Route::get('numeroJogos/{id}', 'ClienteController@numeroJogos');
   Route::put('updateCliente/{id}','ClienteController@update');
-
+  Route::get('getJogos/{id}', 'VendedorController@getJogos');
+  Route::get('downloadFoto/{id}','JogosController@downloadFoto');
+  Route::get('jogosDoAno','JogosController@jogosDoAno');
+  Route::get('getCategoria/{id}', 'JogosController@getCategoria');
+  Route::post('compra', 'ClienteController@compra');
+  //Route::get('classificacao', 'JogosController@classificacao');
+  Route::post('pesquisar', 'JogosController@pesquisar');
 
   //Rotas em relação a middleware do Vendedor//
 
@@ -50,6 +56,3 @@ Route::group(['middleware' => 'auth:api'], function() {
   });
 });
 
-Route::get('downloadFoto/{id}','JogosController@downloadFoto');
-Route::get('getJogos/{id}', 'VendedorController@getJogos');
-Route::get('jogosDoAno','JogosController@jogosDoAno');

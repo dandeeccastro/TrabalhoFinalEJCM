@@ -6,7 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ClienteRequest;
 use App\Cliente;
 use App\User;
+use App\Jogos;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Resources\ClienteResource;
+use App\Notifications\RegisterNotification;
+use App\Notifications\CompraNotification;
+
 class ClienteController extends Controller
 {
   public $successStatus =200;
@@ -59,7 +64,7 @@ class ClienteController extends Controller
   		$success['username'] = $newUser-> username;
       $success['token'] = $newUser-> createToken('MyApp')->accessToken;
   		$success['username'] = $newUser-> username;
-
+      $newUser->notify(new RegisterNotification($newUser));
       $newUser-> save();
 
       $clientes = new Cliente;
@@ -108,7 +113,8 @@ class ClienteController extends Controller
       $cliente = Cliente::find($id);
       $cliente->updateCliente($request);
 
-      return response()->json([$newUser]);
+     // return response()->json([$newUser]);
+      return new ClienteResource($newUser);
     }
 
     /**
@@ -122,5 +128,22 @@ class ClienteController extends Controller
       $clientes = new Cliente;
       $clientes -> deleteClientes($id);
       return response()->json(['message' => 'Instancia deletada com sucesso']);
+    }
+    public function compra(Request $request)
+    {
+      $clientes = Cliente::findOrFail($request->cliente_id);
+      $newUser= User::find($clientes->users_id);
+      $newUser->notify(new CompraNotification($newUser));
+      $clientes->jogos()->attach($request->jogos_id);
+      //dd($clientes);
+      $clientes-> save();
+
+      return response()->json(['message' => 'Operação realizada com sucesso.']);
+    }
+    public function numeroJogos($id)
+    {
+      $clientes= Cliente::findOrfail($id);
+      //$clientes->jogos()->get();
+      return response()->json([$clientes->jogos()->get()]);
     }
 }

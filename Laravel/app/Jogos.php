@@ -11,6 +11,8 @@ class Jogos extends Model
 
   protected $dates = ['deteled_at'];
 
+  protected $fillable = [];
+
   public function clientes()
     {
       return $this->belongsToMany('App\Cliente');
@@ -18,6 +20,10 @@ class Jogos extends Model
   public function vendedor()
   {
     return $this->belongsTo('App\Vendedor');
+  }
+  public function categoria()
+  {
+    return $this->belongsTo('App\Categoria');
   }
 
   public function insereJogo($request){
@@ -58,5 +64,6 @@ class Jogos extends Model
   public function deleteJogos($id){
     Jogos::destroy($id);
   }
+
 
 }
