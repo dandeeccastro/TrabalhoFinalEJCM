@@ -16,7 +16,7 @@ class CreateJogosTable extends Migration
         Schema::create('jogos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
-            $table->string('preco');
+            $table->float('preco');
             $table->integer('vendedor_id')->unsigned();
             $table->integer('categoria_id')->unsigned();
             $table->integer('classificacaoUsuarios')->default('5');
