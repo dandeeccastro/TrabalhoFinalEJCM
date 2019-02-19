@@ -48,8 +48,10 @@
         <label for="telefone">Telefone (opcional)</label>
       </div>
       <div class="input-field col l6 s12">
-        <input id="nascimento" type="date" class="validate">
+        <input id="nascimento" type="text" [(ngModel)]="datepicker" materialize="pickadate" [materializeParams]="[{format:'dd/mm/yyyy', selectYears: 15}]">
+        <label for="nascimento"> Data de Nascimento</label>
       </div>
     </div>
   </fieldset>
 </form>
+<!--  [(ngModel)]="datepicker" [materializeParams]="[{format:'dd/mm/yyyy'}]-->
