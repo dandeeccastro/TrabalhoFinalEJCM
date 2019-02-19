@@ -9,13 +9,14 @@ h2 {
 	background-color: grey;
 	border-radius: 10%;
 	top: 10em;
-	left: 35em;
+	left: 20em;
 	padding: 0  !important;
-
+	opacity: 0.7;
 	transition: background-color .1s ease-in;
 }
 .preco:hover {
 	background-color: deepskyblue;
+	opacity: 1;
 }
 .wrapper{
 	display: flex;

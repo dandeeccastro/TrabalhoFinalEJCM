@@ -6,7 +6,7 @@
 					<div class="col l4 m4 s4">
 						<a href='#'><img  data-activates='dropdown1' class="dropdown-button nav-images logged-out-user" src="../../assets/man-user.svg" alt=""></a>
 							<ul id='dropdown1' class='dropdown-content'>
-								<li><a href="#!">one</a></li>
+								<li><a href="#!">Editar perfil</a></li>
 								<li><a href="#!">two</a></li>
 								<li class="divider"></li>
 								<li><a href="#!">three</a></li>
@@ -16,10 +16,10 @@
 						</div>
 						<div class="col l8 m8 s8">
 							<div class="conta row">
-								<a href="login">Logar</a>
+								<a routerLink="login">Logar</a>
 							</div>
 							<div class="conta row">
-								<a href="cadastro">Criar conta</a>
+								<a routerLink="cadastro">Criar conta</a>
 							</div>
 						</div>
 			    </div>
@@ -39,6 +39,7 @@
 				<li class="tab"><a routerLink="pesquisa">Categorias</a></li>
 				<li class="tab"><a routerLink="parceria">Por que ser um parceiro?</a></li>
 				<li class="tab"><a routerLink="sobre">Sobre Nós</a></li>
+				<li class="tab"><a routerLink="cadastrojogo">Cadastre seu jogo aqui</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -49,12 +50,13 @@
       <div class="background">
       </div>
       <a href="#!user"><img class="logged-out-user-nav" src="../../assets/man-user.svg" alt=""></a>
-      <a href="#!name"><span class="white-text name">Pessoa</span></a>
-      <a href="#!email"><span class="white-text email">e-mail</span></a>
+      <a routerLink="login"><span class="white-text name">login</span></a>
+      <a routerLink="cadastro"><span class="white-text email">criar conta</span></a>
     </div></li>
     <li><a class="subtopico subheader center-align">Navegação</a></li>
 		<li><a class="subtopico waves-effect" routerLink="home">Home</a></li>
 		<li><a class="subtopico waves-effect" routerLink="pesquisa">Categorias</a></li>
 		<li><a class="subtopico waves-effect" routerLink="parceria">Por que ser um parceiro?</a></li>
 		<li><a class="subtopico waves-effect" routerLink="sobre">Sobre Nós</a></li>
+		<li class="tab"><a class="subtopico waves-effect" routerLink="cadastrojogo">Cadastre seu jogo aqui</a>
   </ul>

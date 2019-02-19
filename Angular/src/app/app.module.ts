@@ -22,10 +22,14 @@ import { LoginComponent } from './pages/login/login.component';
 import { JogosComponent } from './pages/jogos/jogos.component';
 import { CadastrojogoComponent } from './pages/cadastrojogo/cadastrojogo.component';
 import { PesquisaComponent } from './pages/pesquisa/pesquisa.component';
+import { EditarComponent } from './pages/editar/editar.component';
+import { EditdesenComponent } from './pages/editar/editdesen/editdesen.component';
+import { EditjogadorComponent } from './pages/editar/editjogador/editjogador.component';
 
 /* SERVICES E AFINS */
 import { HttpClientModule } from '@angular/common/http';
 import { PesquisaService } from './service/pesquisa.service';
+
 
 @NgModule({
   declarations: [
@@ -43,19 +47,22 @@ import { PesquisaService } from './service/pesquisa.service';
 	LoginComponent,
 	JogosComponent,
 	PesquisaComponent,
-	CadastrojogoComponent
+	CadastrojogoComponent,
+	EditarComponent,
+	EditdesenComponent,
+	EditjogadorComponent
   ],
   imports: [
-  BrowserModule,
+  	BrowserModule,
 	AppRoutingModule,
 	MaterializeModule,
 	HttpClientModule,
 	FormsModule
   ],
   providers: [
-		HttpClientModule,
-		PesquisaComponent
-	],
+	HttpClientModule,
+	PesquisaComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
