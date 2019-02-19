@@ -11,35 +11,35 @@
       <div class="row">
         <h4>Selecione a categoria:</h4>
         <p>
-          <input id="Aventura" value="Aventura" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio"/>
+          <input id="Aventura" value="1" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio"/>
         <label for="Aventura">Aventura</label>
         </p>
         <p>
-          <input id="Survival" value="Survival" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio"/>
+          <input id="Survival" value="2" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio"/>
         <label for="Survival">Survival</label>
         </p>
         <p>
-          <input id="Arcade" value="Arcade" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio"/>
+          <input id="Arcade" value="3" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio"/>
         <label for="Arcade">Arcade</label>
         </p>
         <p>
-          <input id="RPG" value="RPG" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio" />
+          <input id="RPG" value="4" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio" />
         <label for="RPG">RPG</label>
         </p>
         <p>
-          <input id="Corrida" value="Corrida" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio"/>
+          <input id="Corrida" value="5" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio"/>
         <label for="Corrida">Corrida</label>
         </p>
         <p>
-          <input id="Esportes" value="Esportes" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio"/>
+          <input id="Esportes" value="6" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio"/>
         <label for="Esportes">Esportes</label>
         </p>
         <p>
-          <input id="Estrategia" value="Estrategia" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio"/>
+          <input id="Estrategia" value="7" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio"/>
         <label for="Estrategia">Estrategia</label>
         </p>
         <p>
-          <input id="Acao" value="Acao" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio"/>
+          <input id="Acao" value="8" name="cadastrojogo" ngModel required #categoria="ngModel" type="radio"/>
         <label for="Acao">Ação</label>
         </p>
       </div>
@@ -76,7 +76,7 @@
       </div>
       <div class="row">
         <div class="input-field col l6 s12">
-          <input id="dataDeLancamento" type="text" [(ngModel)]="datepicker"   materialize="pickadate" [materializeParams]="[{format:'dd/mm/yyyy',   selectYears: 15}]">
+          <input id="dataDeLancamento" type="text" name="dataDeLancamento" [(ngModel)]="datepicker"   materialize="pickadate" [materializeParams]="[{format:'dd/mm/yyyy',   selectYears: 15}]">
           <label for="dataDeLancamento">Data de Lançamento:</label>
         </div>
       </div>
