@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ScrolltopService } from '../../service/scrolltop.service';
+import { CadastroService } from '../../service/cadastro.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,13 +12,40 @@ export class CadastroComponent implements OnInit {
 
   private cpfIsValid: boolean = false;
   private switch: boolean = false;
-  constructor(private scrolltop : ScrolltopService) { }
+  constructor(private scrolltop : ScrolltopService, private cadastroService: CadastroService) { }
 
   ngOnInit() {
     this.scrolltop.setScrollTop();
   }
   onSubmit(cadastro){
+
+    let telefone = cadastro.value.telefone.toString();
+    if(telefone.length == 9) {
+      telefone = telefone.slice(0,5) + "-" + telefone.slice(5,9);
+      console.log(telefone);
+    }
+    let cpf = cadastro.value.cpf.toString();
+    if(cpf.length == 11) {
+      cpf = cpf.slice(0,3) + "." + cpf.slice(3,6) + "." + cpf.slice(6,9) + "-" + cpf.slice(9,11);
+      console.log(cpf);
+    }
+    cadastro.value.telefone = telefone;
+    cadastro.value.cpf = cpf;
     console.log(cadastro);
+
+    if(cadastro.value.usertype) {
+      this.cadastroService.cadastrarDesenvolvedor(cadastro.value).subscribe(
+        (res) => {
+          console.log(res);
+        }
+      );
+    } else {
+      this.cadastroService.cadastrarJogador(cadastro.value).subscribe(
+        (res) => {
+          console.log(res);
+        }
+      );
+    }
   }
 
   validateCPF(cpf) {
