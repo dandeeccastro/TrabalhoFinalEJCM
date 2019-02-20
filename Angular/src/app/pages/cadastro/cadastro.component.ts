@@ -38,6 +38,7 @@ export class CadastroComponent implements OnInit {
         (res) => {
           console.log(res);
           localStorage.setItem("token",res.success.token);
+          localStorage.setItem("permission","1");
         }
       );
     } else {
@@ -45,6 +46,7 @@ export class CadastroComponent implements OnInit {
         (res) => {
           console.log(res);
           localStorage.setItem("token",res.success.token);
+          localStorage.setItem("permission","0");
         }
       );
     }

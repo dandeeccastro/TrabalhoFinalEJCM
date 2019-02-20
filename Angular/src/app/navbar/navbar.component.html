@@ -44,7 +44,7 @@
 				<li class="tab"><a routerLink="pesquisa">Categorias</a></li>
 				<li class="tab"><a routerLink="parceria">Por que ser um parceiro?</a></li>
 				<li class="tab"><a routerLink="sobre">Sobre Nós</a></li>
-				<li class="tab"><a routerLink="cadastrojogo">Cadastre seu jogo aqui</a></li>
+				<li *ngIf="isDev()" class="tab"><a routerLink="cadastrojogo">Cadastre seu jogo aqui</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -63,5 +63,5 @@
 		<li><a class="subtopico waves-effect" routerLink="pesquisa">Categorias</a></li>
 		<li><a class="subtopico waves-effect" routerLink="parceria">Por que ser um parceiro?</a></li>
 		<li><a class="subtopico waves-effect" routerLink="sobre">Sobre Nós</a></li>
-		<li class="tab"><a class="subtopico waves-effect" routerLink="cadastrojogo">Cadastre seu jogo aqui</a>
+		<li *ngIf="isDev()" class="tab"><a class="subtopico waves-effect" routerLink="cadastrojogo">Cadastre seu jogo aqui</a>
   </ul>
