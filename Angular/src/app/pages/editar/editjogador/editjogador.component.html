@@ -1,59 +1,59 @@
 <div class="container">
     <fieldset><label>Edite o seu perfil:</label>
-        <form>
-     	  <div class="row">
-     	      <div class="input-field col l12 s12">
-     	      	<input id="username" name="" type="text" class="validate">
-     	      	<label for="username">Nome de usuário:</label>
+        <form #editjogador="ngForm" (ngSubmit)="onSubmit(editjogador)">
+     	    <div class="row">
+     	        <div class="input-field col l12 s12">
+     	          <input id="username" name="username" type="text" class="validate" ngModel required #usuario="ngModel">
+     	          <label for="username">Nome de usuário:</label>
+     	        </div>
+     	    </div>
+     	    <div class="row">
+     	        <div class="input-field col l12 s12">
+     	          <input id="telefone" name="telefone" type="text" class="validate" ngModel required #telefone="ngModel">
+     	          <label for="telefone">Telefone (Ex: 12345-6789):</label>
+     	    	</div>
+     	    </div>
+     	    <div class="row">
+     	        <div class="input-field col l12 s12">
+     	          <input id="email" type="text" class="validate" ngModel  required #email="ngModel">
+     	          <label for="email">e-mail:</label>
      	      </div>
-     	  </div>
-     	  <div class="row">
-     	      <div class="input-field col l12 s12">
-     	      	<input id="telefone" type="text" class="validate">
-     	      	<label for="telefone">Telefone - Ex: 12345-6789</label>
-     	  	</div>
-     	  </div>
-     	  <div class="row">
-     	      <div class="input-field col l12 s12">
-     	        <input id="email" type="text" class="validate">
-     	        <label for="email">e-mail:</label>
      	    </div>
-     	  </div>
-     	  <div class="row">
-     	      <div class="input-field col l12 s12">
-     	        <input id="numeroCartao" type="text" class="validate">
-     	        <label for="numeroCartao">Número do cartão</label>
+     	    <div class="row">
+     	        <div class="input-field col l12 s12">
+     	          <input id="numeroCartao" type="text" class="validate" ngModel required #numerocartao="ngModel">
+     	          <label for="numeroCartao">Número do cartão</label>
+     	        </div>
      	    </div>
-     	  </div>
-     	  <div class="row">
-     	    <div select class="input-field col l12 s12">
-     	        <input id="nomeTitularCartao" type="password" class="validate">
-     	        <label for="nomeTitularCartao">Nome titular do cartão:</label>
+     	    <div class="row">
+     	        <div select class="input-field col l12 s12">
+     	          <input id="nomeTitularCartao" type="text" class="validate" ngModel required #nometitular="ngModel">
+     	          <label for="nomeTitularCartao">Nome titular do cartão:</label>
+     	        </div>
      	    </div>
-     	  </div>
-     	   <div class="row">
-     	    <div select class="input-field col l12 s12">
-     	        <input id="codigoSegurancaCartao" type="password" class="validate">
-     	        <label for="codigoSegurancaCartao">Código de segurança do cartão:</label>
+     	    <div class="row">
+     	        <div select class="input-field col l12 s12">
+     	          <input id="codigoSegurancaCartao" type="password" class="validate" ngModel required   #codigoDeSegurancaCartao="ngModel">
+     	          <label for="codigoSegurancaCartao">Código de segurança do cartão:</label>
+     	        </div>
      	    </div>
-     	  </div>
-     	  <div class="row">
-     	      <div class="input-field col l12 s12">
-     	      	<input id="bandeiraCartao" type="text" class="validate">
-     	      	<label for="bandeiraCartao">Bandeira do cartão:</label>
-     	      </div>
-     	  </div>
-     	  <div class="row">
-     	      <div class="input-field col l6 s12">
-       	    		<input id="dataDeVencimentoCartao" type="text" [(ngModel)]="datepicker"   materialize="pickadate" [materializeParams]="[{format:'dd/mm/yyyy',   selectYears: 15}]">
-       	    		<label for="dataDeVencimentoCartao">Data de vencimento:</label>
-      	 	</div>
-     	  </div>
-     	  <div class="col l6 m12 s12">
-     	    <button class="btn waves-effect waves-light" type="submit" name="login">Editar
-     	      <i class="material-icons right">send</i>
-     	    </button>
-     	  </div>
+     	    <div class="row">
+     	        <div class="input-field col l12 s12">
+     	        	<input id="bandeiraCartao" type="text" class="validate" ngModel required #bandeiracartao="ngModel">
+     	        	<label for="bandeiraCartao">Bandeira do cartão:</label>
+     	        </div>
+     	    </div>
+     	    <div class="row">
+     	        <div class="input-field col l6 s12">
+       	          	<input id="dataDeVencimentoCartao" type="text" [(ngModel)]="datepicker"   materialize="pickadate" [ materializeParams]="[{format:'dd/mm/yyyy',   selectYears: 15}]" ngModel required #dataDeVencimentoCartao="ngModel">
+       	          	<label for="dataDeVencimentoCartao">Data de vencimento:</label>
+      	   	    </div>
+     	    </div>
+     	    <div class="col l6 m12 s12">
+     	        <button class="btn waves-effect waves-light" type="submit" name="editjogador">Editar
+     	          <i class="material-icons right">send</i>
+     	        </button>
+     	    </div>
         </form>
     </fieldset>
 </div>

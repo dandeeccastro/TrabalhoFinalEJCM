@@ -1,45 +1,45 @@
 <div class="container">
     <fieldset><label>Edite o seu perfil de desenvolvedor:</label>
-    	<form>
+    	<form  #editdesen="ngForm" (ngSubmit)="onSubmit(editdesen)">
 			<div class="row">
 			    <div class="input-field col l12 s12">
-			    	<input id="username" type="text" class="validate">
+			    	<input id="username" type="text" class="validate" ngModel required #username="ngModel">
 			    	<label for="username">Nome de usuário:</label>
 			    </div>
 			</div>
 			<div class="row">
 			    <div class="input-field col l12 s12">
-			    	<input id="telefone" type="text" class="validate">
+			    	<input id="telefone" type="text" class="validate" ngModel required #telefone="ngModel">
 			    	<label for="telefone">Telefone - Ex: 12345-6789</label>
 				</div>
 			</div>
 			<div class="row">
 			    <div class="input-field col l12 s12">
-			      <input id="email" type="text" class="validate">
+			      <input id="email" type="text" class="validate" ngModel required #email="ngModel">
 			      <label for="email">e-mail:</label>
 			  </div>
 			</div>
 			<div class="row">
 			    <div class="input-field col l12 s12">
-			      <input id="contaCorrente" type="text" class="validate">
+			      <input id="contaCorrente" type="text" class="validate" ngModel required #contaCorrente="ngModel">
 			      <label for="contaCorrente">Conta corrente:</label>
 			  </div>
 			</div>
 			<div class="row">
 			  <div select class="input-field col l12 s12">
-			      <input id="agencia" type="password" class="validate">
+			      <input id="agencia" type="password" class="validate" ngModel required #agencia="ngModel">
 			      <label for="agencia">Agência:</label>
 			  </div>
 			</div>
 			 <div class="row">
 			  <div select class="input-field col l12 s12">
-			      <input id="banco" type="password" class="validate">
+			      <input id="banco" type="password" class="validate" ngModel required #banco="ngModel">
 			      <label for="banco">Banco:</label>
 			  </div>
 			</div>
 			<div class="row">
 			    <div class="input-field col l12 s12">
-			    	<input id="operacao" type="text" class="validate">
+			    	<input id="operacao" type="text" class="validate" ngModel required #operacao="ngModel">
 			    	<label for="operacao">Operação:</label>
 			    </div>
 			</div>

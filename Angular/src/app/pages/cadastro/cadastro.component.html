@@ -15,18 +15,8 @@
 		          <label for="senha">Senha</label>
 		        </div>
 		        <div class="input-field col l6 m12 s12">
-		          <input id="senha1" type="password" name="senha1" class="validate" ngModel #senha1="ngModel">
-		          <label data-error="Senhas não correspondem" data-success="Senhas iguais" for="senha1">Confirmar senha</label>
-		        </div>
-		      </div>
-		      <div class="row">
-		        <div class="input-field col l6 m12 s12">
 		          <input id="email" type="email" class="validate" name="email" ngModel #email="ngModel">
 		          <label for="email">e-mail</label>
-		        </div>
-		        <div class="input-field col l6 m12 s12">
-		          <input id="email1" type="email" class="validate" name="email1" ngModel #email1="ngModel">
-		          <label data-error="e-mail não corresponde" data-success="-email igual" for="email">Confirmar e-mail</label>
 		        </div>
 		      </div>
 		  </fieldset>
@@ -79,7 +69,7 @@
 			<div class="selector">
 				<!-- Começa form de jogador -->
 				<div  *ngIf="!switch">
-				<fieldset class="jogadorcampo"><label>Informações para compra:</label>
+				<fieldset class="jogadorcampo"><label>Informações para compra: (não obrigatório para cadastro, apenas para compra)</label>
 					<div class="row">
 						<div class="input-field col l6 s12">
 							<input id="cartao" type="text" class="validate" name="cartao" ngModel #cartao="ngModel">
@@ -102,7 +92,8 @@
 					</div>
 					<div class="row">
 						<div class="input-field col l10 s12">
-							<input id="vencimentoCartao" class="validate" name="vencimentoCartao" ngModel #vencimentoCartao="ngModel" type="text">
+							<input id="vencimentoCartao" type="text" [(ngModel)]="datepicker1" name="vencimentoCartao" materialize="pickadate" [materializeParams]="[{format:'dd/mm/yyyy', selectYears: 15}]" #vencimentoCartao="ngModel">
+		          			<label for="vencimentoCartao">Data de vencimento do cartão</label>
 						</div>
 					</div>
 				</fieldset>
@@ -146,14 +137,14 @@
 			</div>
 			</form>
 			<div class="modal" materialize="modal" [materializeParams]="[{dismissible: true}]" [materializeActions]="modalActions">
-					<div class="modal-content">
-						<h3>Dados enviados com sucesso</h3>
-						<p>Os dados para o cadastro foram enviados com sucesso e estão sendo avaliados pelo sistema. Se estiver tudo certo em isntatnes receberá um e-mail confirmando seu cadastro.</p>
-						<p>Muito obrigado por escolher o nosso serviço.</p>
-					</div>
-					<div class="modal-footer">
-						<a href="home" class=" modal-action modal-close waves-effect waves-purple btn-flat">Voltar à home</a>
-					</div>
+				<div class="modal-content">
+					<h3>Dados enviados com sucesso</h3>
+					<p>Os dados para o cadastro foram enviados com sucesso e estão sendo avaliados pelo sistema. Se estiver tudo certo em isntatnes receberá um e-mail confirmando seu cadastro.</p>
+					<p>Muito obrigado por escolher o nosso serviço.</p>
 				</div>
+				<div class="modal-footer">
+					<a href="home" class=" modal-action modal-close waves-effect waves-purple btn-flat">Voltar à home</a>
+				</div>
+			</div>
     </div>
 </section>

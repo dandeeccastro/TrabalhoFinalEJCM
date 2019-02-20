@@ -51,11 +51,6 @@
 	background-color: #335964;
 }
 
-.tabs{
-	/* ao ativar, a barra de navegação fica mais fina, porém a faixa de localização para o usuário continua abaixo */
-	/* margin: -1vh 0; */
-}
-
 .background{
 	background-color: #0D1B1B;
 }
@@ -64,17 +59,8 @@
 	height: 25vh;
 }
 
-nav{
-	line-height: 1px;
-}
-
 .conta{
 	font-size: 1rem;
-}
-
-input{
-	border-radius: 10px !important;
-	padding: 1vh !important;
 }
 
 .side-nav{
@@ -84,6 +70,22 @@ input{
 .subtopico{
 	color: white;
 }
+
+.edit{
+	font-size: 0.8em;
+}
+
+nav{
+	line-height: 1px;
+}
+
+input{
+	border-radius: 10px !important;
+	padding: 1vh !important;
+}
+
+
+
 
 
 @media only screen and (max-width: 650px) {

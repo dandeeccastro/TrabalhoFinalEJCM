@@ -6,12 +6,8 @@
 					<div class="col l4 m4 s4">
 						<a href='#'><img  data-activates='dropdown1' class="dropdown-button nav-images logged-out-user" src="../../assets/man-user.svg" alt=""></a>
 							<ul id='dropdown1' class='dropdown-content'>
-								<li><a href="#!">Editar perfil</a></li>
-								<li><a href="#!">two</a></li>
-								<li class="divider"></li>
-								<li><a href="#!">three</a></li>
-								<li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-								<li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+								<li><a class="edit" href="editar">Editar perfil de jogador</a></li>
+								<li><a class="edit" href="editar">Editar perfil de desenvolvedor e jogo</a></li>
 							</ul>
 						</div>
 						<div class="col l8 m8 s8">
@@ -54,7 +50,7 @@
     <li><div class="user-view">
       <div class="background">
       </div>
-      <a href="#!user"><img class="logged-out-user-nav" src="../../assets/man-user.svg" alt=""></a>
+       <a href="#!user"><img class="logged-out-user-nav" src="../../assets/man-user.svg" alt=""></a>
       <a routerLink="login"><span class="white-text name">login</span></a>
       <a routerLink="cadastro"><span class="white-text email">criar conta</span></a>
     </div></li>
@@ -63,5 +59,7 @@
 		<li><a class="subtopico waves-effect" routerLink="pesquisa">Categorias</a></li>
 		<li><a class="subtopico waves-effect" routerLink="parceria">Por que ser um parceiro?</a></li>
 		<li><a class="subtopico waves-effect" routerLink="sobre">Sobre Nós</a></li>
-		<li class="tab"><a class="subtopico waves-effect" routerLink="cadastrojogo">Cadastre seu jogo aqui</a>
+		<li><a class="subtopico waves-effect" routerLink="cadastrojogo">Cadastre seu jogo aqui</a></li>			
+      	<li><a class="subtopico waves-effect" routerLink="editar">Editar perfil de jogador</a></li>
+	  	<li><a class="subtopico waves-effect" routerLink="editar">Editar perfil de desenvolvedor e jogo</a></li>
   </ul>
