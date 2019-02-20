@@ -1,15 +1,16 @@
 <section class="first-section">
   <div class="container">
+    <form #form="ngForm" (ngSubmit)='onSubmit(form)'>
     <fieldset><label>Login</label>
       <div class="row">
           <div class="input-field col l12 s12">
-            <input id="username" type="text" class="validate">
+            <input id="username" name="username" type="text" class="validate" ngModel #username="ngModel">
             <label for="username">Nome de usuário</label>
         </div>
       </div>
       <div class="row">
         <div select class="input-field col l12 s12">
-            <input id="password" type="password" class="validate">
+            <input id="password" type="password" name="password" class="validate" ngModel #password="ngModel">
             <label for="password">senha</label>
         </div>
       </div>
@@ -29,5 +30,6 @@
         </div>
       </div>
     </fieldset>
+    </form>
 </div>
 </section>

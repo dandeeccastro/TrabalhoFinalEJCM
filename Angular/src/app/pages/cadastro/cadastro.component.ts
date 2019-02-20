@@ -37,12 +37,14 @@ export class CadastroComponent implements OnInit {
       this.cadastroService.cadastrarDesenvolvedor(cadastro.value).subscribe(
         (res) => {
           console.log(res);
+          localStorage.setItem("token",res.success.token);
         }
       );
     } else {
       this.cadastroService.cadastrarJogador(cadastro.value).subscribe(
         (res) => {
           console.log(res);
+          localStorage.setItem("token",res.success.token);
         }
       );
     }
