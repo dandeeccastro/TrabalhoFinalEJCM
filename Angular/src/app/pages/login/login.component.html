@@ -1,5 +1,6 @@
 <section class="first-section">
   <div class="container">
+<<<<<<< HEAD
     <form #login="ngForm" (ngSubmit)="onSubmit(login)">
       <fieldset><label>Login</label>
         <div class="row">
@@ -13,6 +14,20 @@
               <input id="password" type="password" class="validate" ngModel #password="ngModel">
               <label for="password">senha</label>
           </div>
+=======
+    <form #form="ngForm" (ngSubmit)='onSubmit(form)'>
+    <fieldset><label>Login</label>
+      <div class="row">
+          <div class="input-field col l12 s12">
+            <input id="username" name="username" type="text" class="validate" ngModel #username="ngModel">
+            <label for="username">Nome de usuário</label>
+        </div>
+      </div>
+      <div class="row">
+        <div select class="input-field col l12 s12">
+            <input id="password" type="password" name="password" class="validate" ngModel #password="ngModel">
+            <label for="password">senha</label>
+>>>>>>> f0550f8f3935c67fc81dfa85aeabe9c53757096a
         </div>
         <div class="row">
           <div class="col l6 m12 s12">
@@ -29,7 +44,19 @@
             </button>
           </div>
         </div>
+<<<<<<< HEAD
       </fieldset>
     </form>
   </div>
+=======
+        <div class="col l6 m12 s12">
+          <button class="btn waves-effect waves-light" type="submit" name="login">Entrar
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+    </fieldset>
+    </form>
+</div>
+>>>>>>> f0550f8f3935c67fc81dfa85aeabe9c53757096a
 </section>

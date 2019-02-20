@@ -55,7 +55,7 @@ class ClienteController extends Controller
   		$newUser = new User;
   		$newUser->name = $request ->name;
   		$newUser->email = $request->email;
-  		$newUser-> password = bcrypt($request -> password);
+  		$newUser->password = bcrypt($request ->password);
       	$newUser->cpf = $request->cpf;
       	$newUser->username= $request->username;
       	$newUser->dataDeNascimento = $request->dataDeNascimento;
