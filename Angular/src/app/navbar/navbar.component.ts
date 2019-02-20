@@ -12,4 +12,12 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  isDev(){
+    let permission = localStorage.getItem("permission");
+    if(permission == "1") {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

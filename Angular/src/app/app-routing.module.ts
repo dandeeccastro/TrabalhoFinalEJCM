@@ -13,6 +13,8 @@ import { CadastrojogoComponent } from './pages/cadastrojogo/cadastrojogo.compone
 import { PesquisaComponent } from './pages/pesquisa/pesquisa.component';
 import { EditarComponent } from './pages/editar/editar.component';
 
+import { AuthGuard } from './guards/auth.guard';
+
 const routes: Routes = [
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
 	{ path: 'parceria', component: ParceriaComponent },
@@ -21,7 +23,7 @@ const routes: Routes = [
 	{ path: 'cadastro', component: CadastroComponent},
 	{ path: 'login', component: LoginComponent},
 	{ path: 'jogos', component: JogosComponent},
-	{ path: 'cadastrojogo', component: CadastrojogoComponent},
+	{ path: 'cadastrojogo', component: CadastrojogoComponent, canActivate: [AuthGuard]},
 	{ path: 'pesquisa', component: PesquisaComponent },
 	{ path: 'editar', component: EditarComponent }
 ];

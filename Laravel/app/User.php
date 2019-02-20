@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;//usando Passport
+use App\Cliente;
 
 class User extends Authenticatable
 {
@@ -14,13 +15,22 @@ class User extends Authenticatable
     use HasApiTokens; //indicar que o import acima será utilizado
     public function vendedor()
       {
-        return $this->belongsTo('App\Vendedor');
+        return $this->hasOne('App\Vendedor');
       }
     public function clientes()
         {
-          return $this->belongsTo('App\Cliente');
+          //return $this->hasOne('App\Cliente');
+          return Cliente::where('users_id',$this->id)->first();
         }
-
+        public function role(){
+          $vendedor = $this->vendedor;
+          $cliente = $this->clientes();
+          if($cliente){
+            return ['cliente' => $cliente];
+          } else {
+            return ['vendedor' => $vendedor];
+          }
+        }
 
     /**
      * The attributes that are mass assignable.

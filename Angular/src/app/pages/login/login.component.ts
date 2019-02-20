@@ -17,10 +17,26 @@ export class LoginComponent implements OnInit {
   }
   onSubmit(user){
     console.log(user.value);
-    this.loginService.login(user.value, localStorage.getItem("token")).subscribe(
+    this.loginService.login(user.value).subscribe(
       (res) => {
         console.log(res);
+        localStorage.setItem("token",res.success.token);
+        console.log(res.cliente, res.vendedor);
+        if(res.role.cliente != null){
+          
+          localStorage.setItem("permission","0");
+        } else {
+          localStorage.setItem("permission","1");
+        }
       }
     );
   }
+/*
+  getDetails(){
+     this.loginService.getDetails().subscribe(
+      (res) => {
+        console.log( res);
+      }
+    );
+  }*/
 }

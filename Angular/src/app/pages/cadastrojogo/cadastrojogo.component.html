@@ -4,7 +4,7 @@
 		<form #cadastrojogo="ngForm" (ngSubmit)="onSubmit(cadastrojogo)" action="#">
       <div class="row">
         <div class="input-field col l12 m12 s12">
-          <input  id="nomejogo" type="text" class="validate" ngModel #nome="ngModel">
+          <input  id="nomejogo" type="text" name="nomejogo" class="validate" ngModel #nome="ngModel">
           <label for="nomejogo">Digite o nome do jogo aqui:</label>
         </div>
       </div>
