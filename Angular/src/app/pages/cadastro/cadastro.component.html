@@ -134,11 +134,21 @@
 			</div>
 			<div class="row">
 				<div class="entrar col offset-l8 l4 m12 s12">
-			        <button class="btn waves-effect waves-light" type="submit" name="login">Cadastrar
+			        <button class="btn waves-effect waves-light" (click)="abreModal()" type="submit" name="login">Cadastrar
 			          <i class="material-icons right">send</i>
 	        		</button>
 	     		</div>
 			</div>
-	    </form>
+			</form>
+			<div class="modal" materialize="modal" [materializeParams]="[{dismissible: true}]" [materializeActions]="modalActions">
+					<div class="modal-content">
+						<h3>Dados enviados com sucesso</h3>
+						<p>Os dados para o cadastro foram enviados com sucesso e estão sendo avaliados pelo sistema. Se estiver tudo certo em isntatnes receberá um e-mail confirmando seu cadastro.</p>
+						<p>Muito obrigado por escolher o nosso serviço.</p>
+					</div>
+					<div class="modal-footer">
+						<a href="home" class=" modal-action modal-close waves-effect waves-purple btn-flat">Voltar à home</a>
+					</div>
+				</div>
     </div>
 </section>

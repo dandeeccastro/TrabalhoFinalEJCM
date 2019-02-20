@@ -5,3 +5,18 @@ input{
 textarea{
 	color: #dddddd;
 }
+
+.btn{
+	margin-top: 5vh ;
+	background-color: #335964;
+	color: #DDDDDD;
+  }
+
+
+p{
+	color: black;
+}
+
+h3{
+	color: black;
+}

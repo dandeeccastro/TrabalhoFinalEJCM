@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { MaterializeAction } from "angular2-materialize";
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ScrolltopService } from '../../service/scrolltop.service';
 
 @Component({
@@ -8,14 +9,23 @@ import { ScrolltopService } from '../../service/scrolltop.service';
 })
 export class JogosComponent implements OnInit {
 
+  modalActions = new EventEmitter<string|MaterializeAction>();
+
   /* Isso é bem temporário, visto que essa intel vem do back */
   title: string = "Doom";
   description: string = "Mate os demonios e aniquile nazistas nesse FPS topperson mano q isso ce e loko";
-  grade: number = 4.5;
   constructor(private scrolltop : ScrolltopService) { }
 
   ngOnInit() {
     this.scrolltop.setScrollTop();
+  }
+
+  abreModal() {
+    this.modalActions.emit({action:"modal",params:['open']});
+  }
+
+  fechaModal(){
+    this.modalActions.emit({action:"modal",params:['close']});
   }
 
 }
