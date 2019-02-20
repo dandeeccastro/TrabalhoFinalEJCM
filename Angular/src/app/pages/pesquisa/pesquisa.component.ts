@@ -18,6 +18,7 @@ export class PesquisaComponent implements OnInit {
     "Doom", "Warcraft", "Lolzin", "Furi", "Fez", "Celeste", "Warhammer 4k"
   ]
   private siteUrl: string = "http://localhost:4200";
+  private categorySelector: number;
   constructor(private scrolltop : ScrolltopService, public pesquisaService: PesquisaService,private router: Router) { }
 
   ngOnInit() {
@@ -47,16 +48,14 @@ export class PesquisaComponent implements OnInit {
     );
   }
 
-  getGamesByCategory(tag){
-    console.log(tag.value);
-/*    let index = 1;
-    for (let item in this.tags) {
-      if(item == tag.value){ index += this.tags.indexOf(item); }
-    } 
-    this.pesquisaService.getJogosByCategoria(index).subscribe(
-      (res) => {
-        console.log(res);
-      }
-    );
-    */  }
+  getGamesByCategory(){
+    let id: number =  this.categorySelector;
+    if(id != null){
+      this.pesquisaService.getJogosByCategoria(id).subscribe(
+        (res) => {
+          console.log(res);
+        }
+      );
+    }
+  }
 }
