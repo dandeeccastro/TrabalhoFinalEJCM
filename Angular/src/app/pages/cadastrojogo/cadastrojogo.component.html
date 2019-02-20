@@ -82,12 +82,24 @@
       </div>
       <div class="row">
         <div class="col l6 m12 s12">
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal1"><button class="btn waves-effect waves-light" type="submit" name="cadastrarjogo">Cadastrar
+            <button class="btn waves-effect waves-light" (click)="abreModal()" type="submit" name="cadastrarjogo">Cadastrar
               <i class="material-icons right">send</i>
-            </button></a>
+            </button>
         </div>
       </div>
     </form>
     </fieldset>
   </div>
+  <div class="modal" materialize="modal" [materializeParams]="[{dismissible: true}]" [materializeActions]="modalActions">
+      <div class="modal-content">
+        <h3>Dados enviados com sucesso</h3>
+        <p>Os dados do jogo foram enviados ao nosso sistema e será avaliado para enfim cadastrar o jogo em nosso site.</p>
+        <p>Muito obrigado por escolher o nosso serviço.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="home" class=" modal-action modal-close waves-effect waves-purple btn-flat">Ir à Home</a>
+        <a href="cadastrojogo" class=" waves-effect waves-teal btn-flat">Cadastrar outro jogo</a>
+        <a class=" waves-effect waves-red btn-flat" (click)="fechaModal()">Fechar</a>
+      </div>
+    </div>
 </section>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { MaterializeAction } from "angular2-materialize";
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ScrolltopService } from '../../service/scrolltop.service';
 import { CadastroService } from '../../service/cadastro.service';
 import { FormsModule } from '@angular/forms';
@@ -10,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class CadastroComponent implements OnInit {
 
+  modalActions = new EventEmitter<string|MaterializeAction>();
   private cpfIsValid: boolean = false;
   private switch: boolean = false;
   constructor(private scrolltop : ScrolltopService, private cadastroService: CadastroService) { }
@@ -50,6 +52,14 @@ export class CadastroComponent implements OnInit {
         }
       );
     }
+  }
+
+  abreModal() {
+    this.modalActions.emit({action:"modal",params:['open']});
+  }
+
+  fechaModal(){
+    this.modalActions.emit({action:"modal",params:['close']});
   }
 
   validateCPF(cpf) {

@@ -13,10 +13,15 @@
       <li>Morte</li>
     </ul>
   </div>
-  <div class="container grade-container">
-    <p><span class="grade">{{ grade }}</span>/5</p>
+  <button class="waves-effect waves-light btn-large" (click)="abreModal()"><i class="material-icons">shopping_cart</i>Comprar</button>
+  <div class="modal" materialize="modal" [materializeParams]="[{dismissible: true}]" [materializeActions]="modalActions">
+    <div class="modal-content">
+      <h4>Compra quase realizada</h4>
+      <p>Para finalizar a compra basta confirmar abaixo.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="waves-effect waves-light btn-large" type="submit" name="compra">Confirmar</button>
+      <a class=" waves-effect waves-red btn-flat" (click)="fechaModal()">Cancelar</a>
+    </div>
   </div>
-</section>
-<section class="center btn-row row">
-  <button class="waves-effect waves-light btn-large"><i class="material-icons">shopping_cart</i> Adicionar ao carrinho </button>
 </section>

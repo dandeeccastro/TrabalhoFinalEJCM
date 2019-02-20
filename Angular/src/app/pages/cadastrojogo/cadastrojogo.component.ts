@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { MaterializeAction } from "angular2-materialize";
+import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-cadastrojogo',
@@ -7,12 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastrojogoComponent implements OnInit {
 
+  modalActions = new EventEmitter<string|MaterializeAction>();
+
   constructor() { }
 
   ngOnInit() {
   }
+
   onSubmit(cadastrojogo){
   	console.log(cadastrojogo);
+  }
+
+  abreModal() {
+    this.modalActions.emit({action:"modal",params:['open']});
+  }
+
+  fechaModal(){
+    this.modalActions.emit({action:"modal",params:['close']});
   }
 
 }
