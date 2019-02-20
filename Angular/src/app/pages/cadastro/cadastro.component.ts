@@ -9,8 +9,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class CadastroComponent implements OnInit {
 
-  private switch: boolean = false;
   private cpfIsValid: boolean = false;
+  private switch: boolean = false;
   constructor(private scrolltop : ScrolltopService) { }
 
   ngOnInit() {

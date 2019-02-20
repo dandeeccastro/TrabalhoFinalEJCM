@@ -25,10 +25,12 @@ import { PesquisaComponent } from './pages/pesquisa/pesquisa.component';
 import { EditarComponent } from './pages/editar/editar.component';
 import { EditdesenComponent } from './pages/editar/editdesen/editdesen.component';
 import { EditjogadorComponent } from './pages/editar/editjogador/editjogador.component';
+import { EditjogoComponent } from './pages/editar/editjogo/editjogo.component';
 
 /* SERVICES E AFINS */
 import { HttpClientModule } from '@angular/common/http';
 import { PesquisaService } from './service/pesquisa.service';
+
 
 
 @NgModule({
@@ -50,7 +52,8 @@ import { PesquisaService } from './service/pesquisa.service';
 	CadastrojogoComponent,
 	EditarComponent,
 	EditdesenComponent,
-	EditjogadorComponent
+	EditjogadorComponent,
+	EditjogoComponent
   ],
   imports: [
   	BrowserModule,
